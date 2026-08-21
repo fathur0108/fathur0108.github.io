@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Galeri Foto SMK Bangun Nusa Bangsa - Dokumentasi kegiatan, fasilitas, dan prestasi sekolah." />
+  <title>Galeri | SMK Bangun Nusa Bangsa</title>
+  <link rel="icon" href="assets/images/logo-smk.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+    .filter-btn { padding: 10px 22px; font-size: 0.875rem; font-weight: 600; background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: 100px; color: var(--text-muted); cursor: pointer; transition: var(--transition); font-family: var(--font-body); }
+    .filter-btn.active, .filter-btn:hover { background: var(--gradient-red); border-color: var(--red-primary); color: #fff; }
+    .gallery-masonry { columns: 3; gap: 12px; }
+    .gallery-masonry-item { break-inside: avoid; margin-bottom: 12px; overflow: hidden; border-radius: var(--radius-sm); cursor: pointer; position: relative; display: block; }
+    .gallery-masonry-item img { width: 100%; display: block; transition: transform 0.5s ease; }
+    .gallery-masonry-item:hover img { transform: scale(1.05); }
+    .gallery-masonry-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,13,0.85), transparent 60%); opacity: 0; display: flex; align-items: flex-end; padding: 16px; transition: opacity 0.3s; }
+    .gallery-masonry-item:hover .gallery-masonry-overlay { opacity: 1; }
+    .gallery-masonry-caption { font-size: 0.85rem; color: #fff; font-weight: 500; }
+    @media(max-width:768px){ .gallery-masonry{columns:2;} }
+    @media(max-width:480px){ .gallery-masonry{columns:1;} }
+  </style>
+</head>
+<body>
+<div id="preloader"><img class="preloader-logo" src="assets/images/logo-smk.png" alt="Logo SMK" /><p class="preloader-text">SMK Bangun Nusa Bangsa</p><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div>
+<header id="header">
+  <nav class="nav-container">
+    <a href="index.html" class="nav-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="brand-text"><span class="brand-name">SMK Bangun Nusa Bangsa</span><span class="brand-sub">Cibinong &middot; Terakreditasi</span></div></a>
+    <div class="nav-links"><a href="index.html">Beranda</a><a href="profil.html">Profil</a><a href="jurusan.html">Jurusan</a><a href="berita.html">Berita</a><a href="galeri.html" class="active">Galeri</a><a href="kontak.html">Kontak</a><a href="kontak.html" class="btn-nav-cta">Hubungi Kami</a></div>
+    <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav class="mobile-nav"><a href="index.html">Beranda</a><a href="profil.html">Profil</a><a href="jurusan.html">Jurusan</a><a href="berita.html">Berita</a><a href="galeri.html" class="active">Galeri</a><a href="kontak.html">Kontak</a></nav>
+</header>
+<section class="page-hero">
+  <div class="particles"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Galeri</span></div>
+      <h1 class="page-hero-title">Galeri <span>Foto</span></h1>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-secondary);max-width:580px;line-height:1.8;">Kumpulan dokumentasi kegiatan, fasilitas, dan momen berharga di SMK Bangun Nusa Bangsa.</p>
+    </div>
+  </div>
+</section>
+<section style="background:var(--primary-dark)">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="fasilitas">Fasilitas</button>
+      <button class="filter-btn" data-filter="kegiatan">Kegiatan</button>
+      <button class="filter-btn" data-filter="prestasi">Prestasi</button>
+      <button class="filter-btn" data-filter="ekskul">Ekstrakurikuler</button>
+    </div>
+    <div class="gallery-masonry reveal">
+      <div class="gallery-masonry-item filter-item" data-category="fasilitas">
+        <img src="assets/images/gedung.jpg" alt="Gedung Sekolah" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Gedung SMK Bangun Nusa Bangsa</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="kegiatan">
+        <img src="assets/images/gedung.jpg" alt="Upacara Bendera" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Upacara Bendera Hari Senin</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="prestasi">
+        <img src="assets/images/gedung.jpg" alt="Juara LKS" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Juara LKS Provinsi Jawa Barat 2026</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="fasilitas">
+        <img src="assets/images/gedung.jpg" alt="Bengkel TKR" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Bengkel TKR Modern</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="ekskul">
+        <img src="assets/images/gedung.jpg" alt="Pramuka" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Kegiatan Pramuka</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="kegiatan">
+        <img src="assets/images/gedung.jpg" alt="MPLS" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> MPLS Siswa Baru 2026</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="fasilitas">
+        <img src="assets/images/gedung.jpg" alt="Lab Komputer" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Laboratorium Komputer TKJ</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="prestasi">
+        <img src="assets/images/gedung.jpg" alt="Penghargaan" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Penghargaan dari Pemkab Bogor</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="ekskul">
+        <img src="assets/images/gedung.jpg" alt="Futsal" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Tim Futsal SMK BNB</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="kegiatan">
+        <img src="assets/images/gedung.jpg" alt="Kunjungan Industri" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Kunjungan Industri Siswa TKR</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="fasilitas">
+        <img src="assets/images/gedung.jpg" alt="Perpustakaan" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Perpustakaan Sekolah</span></div>
+      </div>
+      <div class="gallery-masonry-item filter-item" data-category="ekskul">
+        <img src="assets/images/gedung.jpg" alt="Seni Musik" />
+        <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption"><i class="fas fa-image"></i> Penampilan Seni Musik</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:20px;">Ganti semua gambar di atas dengan foto asli sekolah Anda di folder <strong style="color:var(--gold-primary);">assets/images/</strong></p>
+      <a href="kontak.html" class="btn btn-outline"><i class="fas fa-camera"></i> Kirimkan Foto ke Kami</a>
+    </div>
+  </div>
+</section>
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <div class="lightbox-close"><i class="fas fa-times"></i></div>
+  <img id="lightbox-img" src="" alt="Preview" />
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="footer-brand-text"><div class="name">SMK Bangun Nusa Bangsa</div><div class="sub">Cibinong, Bogor</div></div></div><p class="footer-about">Lembaga pendidikan kejuruan yang berkomitmen mencetak generasi muda kompeten dan siap berkontribusi bagi nusa dan bangsa.</p><div class="footer-social"><a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-btn"><i class="fab fa-instagram"></i></a><a href="#" class="social-btn"><i class="fab fa-youtube"></i></a><a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div><h4 class="footer-heading">Navigasi</h4><div class="footer-links"><a href="index.html">Beranda</a><a href="profil.html">Profil Sekolah</a><a href="jurusan.html">Program Jurusan</a><a href="berita.html">Berita &amp; Info</a><a href="galeri.html">Galeri Foto</a><a href="kontak.html">Hubungi Kami</a></div></div>
+      <div><h4 class="footer-heading">Program Keahlian</h4><div class="footer-links"><a href="jurusan.html#tkr">TKR</a><a href="jurusan.html#tkj">TKJ</a><a href="jurusan.html#ak">Akuntansi</a></div></div>
+      <div><h4 class="footer-heading">Kontak</h4><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Jl. Raya Cibinong, Bogor, Jawa Barat</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>(021) 8756-xxxx</span></div><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@smkbangunnusabangsa.sch.id</span></div><div class="footer-contact-item"><i class="fas fa-clock"></i><span>Senin &ndash; Sabtu: 07.00 &ndash; 16.00 WIB</span></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 <span>SMK Bangun Nusa Bangsa</span>. Hak Cipta Dilindungi.</p><p>Dibuat dengan <span>&#10084;</span> untuk Pendidikan Indonesia</p></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/main.js"></script>
+<script>
+  // Attach gallery click for masonry items
+  document.querySelectorAll('.gallery-masonry-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      var img = this.querySelector('img');
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightbox-img');
+      if(img && lb && lbImg){ lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('active'); document.body.style.overflow='hidden'; }
+    });
+  });
+</script>
+</body>
+</html>

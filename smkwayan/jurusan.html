@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Program Keahlian SMK Bangun Nusa Bangsa - TKR, TKJ, dan Akuntansi." />
+  <title>Program Jurusan | SMK Bangun Nusa Bangsa</title>
+  <link rel="icon" href="assets/images/logo-smk.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .jurusan-hero { padding: 200px 0 80px; position: relative; overflow: hidden; }
+    .jurusan-hero-bg { position: absolute; inset: 0; background: var(--gradient-hero); }
+    .jurusan-hero-glow { position: absolute; top: -20%; right: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(200,16,46,0.15), transparent 65%); border-radius: 50%; }
+    .jurusan-section { padding: 96px 0; }
+    .jurusan-section:nth-child(even) { background: var(--secondary-dark); }
+    .jurusan-section:nth-child(odd) { background: var(--primary-dark); }
+    .jurusan-detail-header { display: flex; align-items: center; gap: 24px; margin-bottom: 32px; }
+    .jurusan-detail-logo { width: 100px; height: 100px; object-fit: contain; filter: drop-shadow(0 4px 20px rgba(201,168,76,0.3)); }
+    .jurusan-tag-box { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(200,16,46,0.1); border: 1px solid rgba(200,16,46,0.3); border-radius: 100px; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; color: var(--red-light); text-transform: uppercase; margin-bottom: 12px; }
+    .competency-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+    .competency-item { display: flex; gap: 12px; align-items: flex-start; padding: 16px; background: var(--surface); border-radius: var(--radius-sm); border: 1px solid var(--border-color); transition: var(--transition); }
+    .competency-item:hover { border-color: var(--border-hover); }
+    .competency-item i { color: var(--gold-primary); margin-top: 2px; }
+    .competency-item span { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
+    .career-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .career-item { text-align: center; padding: 20px 16px; background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); transition: var(--transition); }
+    .career-item:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .career-item i { font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 10px; display: block; }
+    .career-item strong { display: block; font-size: 0.875rem; color: var(--text-primary); }
+    .jurusan-img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-dark); }
+    .divider-section { padding: 0; }
+    .divider-inner { height: 4px; background: linear-gradient(to right, var(--red-primary), var(--gold-primary), var(--red-primary)); }
+  </style>
+</head>
+<body>
+<div id="preloader"><img class="preloader-logo" src="assets/images/logo-smk.png" alt="Logo SMK" /><p class="preloader-text">SMK Bangun Nusa Bangsa</p><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div>
+<header id="header">
+  <nav class="nav-container">
+    <a href="index.html" class="nav-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="brand-text"><span class="brand-name">SMK Bangun Nusa Bangsa</span><span class="brand-sub">Cibinong &middot; Terakreditasi</span></div></a>
+    <div class="nav-links"><a href="index.html">Beranda</a><a href="profil.html">Profil</a><a href="jurusan.html" class="active">Jurusan</a><a href="berita.html">Berita</a><a href="galeri.html">Galeri</a><a href="kontak.html">Kontak</a><a href="kontak.html" class="btn-nav-cta">Hubungi Kami</a></div>
+    <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav class="mobile-nav"><a href="index.html">Beranda</a><a href="profil.html">Profil</a><a href="jurusan.html" class="active">Jurusan</a><a href="berita.html">Berita</a><a href="galeri.html">Galeri</a><a href="kontak.html">Kontak</a></nav>
+</header>
+<section class="page-hero">
+  <div class="particles"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Program Jurusan</span></div>
+      <h1 class="page-hero-title">Program <span>Keahlian</span></h1>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-secondary);max-width:620px;line-height:1.8;">Tiga program keahlian unggulan yang dirancang untuk mempersiapkan siswa menghadapi dunia kerja yang kompetitif dan terus berkembang.</p>
+      <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
+        <a href="#tkr" class="btn btn-gold"><i class="fas fa-car"></i> TKR</a>
+        <a href="#tkj" class="btn btn-outline"><i class="fas fa-network-wired"></i> TKJ</a>
+        <a href="#ak" class="btn btn-ghost"><i class="fas fa-calculator"></i> Akuntansi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TKR -->
+<section id="tkr" class="jurusan-section" style="background:var(--primary-dark)">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:center;">
+      <div class="reveal-left">
+        <div class="jurusan-detail-header">
+          <img class="jurusan-detail-logo" src="assets/images/logo-tkr.png" alt="Logo TKR" />
+          <div>
+            <span class="jurusan-tag-box"><i class="fas fa-car"></i> TKR</span>
+            <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">Teknik Kendaraan <span>Ringan</span></h2>
+          </div>
+        </div>
+        <div class="gold-line"></div>
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Program keahlian TKR mempersiapkan siswa menjadi tenaga profesional di bidang otomotif. Siswa akan mempelajari seluruh aspek teknis kendaraan bermotor roda empat, mulai dari mesin, sistem kelistrikan, hingga diagnosa kerusakan menggunakan peralatan modern.</p>
+        <div class="competency-grid">
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Perawatan &amp; Perbaikan Mesin</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Sistem Kelistrikan Otomotif</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Sistem Pemindah Tenaga</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Sistem Rem &amp; Suspensi</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Diagnosa Elektronik (EFI)</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Tune-Up &amp; Servis Berkala</span></div>
+        </div>
+        <div style="margin-top:32px;padding:20px;background:rgba(200,16,46,0.06);border:1px solid rgba(200,16,46,0.2);border-radius:var(--radius-sm);">
+          <div style="display:flex;gap:32px;flex-wrap:wrap;">
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">3 Tahun</div><div style="font-size:0.8rem;color:var(--text-muted);">Durasi Belajar</div></div>
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">6 Bulan</div><div style="font-size:0.8rem;color:var(--text-muted);">PKL Industri</div></div>
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">95%</div><div style="font-size:0.8rem;color:var(--text-muted);">Tersalurkan Kerja</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="assets/images/gedung.jpg" alt="Bengkel TKR" class="jurusan-img" />
+        <div style="margin-top:24px;">
+          <h4 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:16px;">Prospek Karir Lulusan</h4>
+          <div class="career-grid">
+            <div class="career-item"><i class="fas fa-car-mechanic"></i><strong>Mekanik Otomotif</strong></div>
+            <div class="career-item"><i class="fas fa-store"></i><strong>Wirausaha Bengkel</strong></div>
+            <div class="career-item"><i class="fas fa-industry"></i><strong>Industri Manufaktur</strong></div>
+            <div class="career-item"><i class="fas fa-truck"></i><strong>Perusahaan Transportasi</strong></div>
+            <div class="career-item"><i class="fas fa-tools"></i><strong>ATPM / Dealer</strong></div>
+            <div class="career-item"><i class="fas fa-graduation-cap"></i><strong>Kuliah Teknik</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-section"><div class="divider-inner"></div></div>
+
+<!-- TKJ -->
+<section id="tkj" class="jurusan-section" style="background:var(--secondary-dark)">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:center;">
+      <div class="reveal-left" style="order:2;">
+        <img src="assets/images/gedung.jpg" alt="Lab Komputer TKJ" class="jurusan-img" />
+        <div style="margin-top:24px;">
+          <h4 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:16px;">Prospek Karir Lulusan</h4>
+          <div class="career-grid">
+            <div class="career-item"><i class="fas fa-network-wired"></i><strong>Network Engineer</strong></div>
+            <div class="career-item"><i class="fas fa-server"></i><strong>System Administrator</strong></div>
+            <div class="career-item"><i class="fas fa-shield-alt"></i><strong>IT Security</strong></div>
+            <div class="career-item"><i class="fas fa-code"></i><strong>Web Developer</strong></div>
+            <div class="career-item"><i class="fas fa-headset"></i><strong>IT Support</strong></div>
+            <div class="career-item"><i class="fas fa-graduation-cap"></i><strong>Kuliah IT</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right" style="order:1;">
+        <div class="jurusan-detail-header">
+          <img class="jurusan-detail-logo" src="assets/images/logo-tkj.png" alt="Logo TKJ" />
+          <div>
+            <span class="jurusan-tag-box" style="background:rgba(21,101,192,0.1);border-color:rgba(21,101,192,0.3);color:#64b5f6;"><i class="fas fa-network-wired"></i> TKJ</span>
+            <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">Teknik Komputer <span>&amp; Jaringan</span></h2>
+          </div>
+        </div>
+        <div class="gold-line"></div>
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Program TKJ membekali siswa kemampuan dalam instalasi, konfigurasi, manajemen jaringan komputer dan sistem informasi. Di era digital ini, lulusan TKJ sangat dibutuhkan industri teknologi informasi yang terus berkembang pesat.</p>
+        <div class="competency-grid">
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Instalasi &amp; Konfigurasi Jaringan</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Administrasi Server Linux/Windows</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Keamanan Jaringan &amp; Firewall</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Pemrograman Web &amp; Database</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Cloud Computing Dasar</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Troubleshooting Hardware &amp; Software</span></div>
+        </div>
+        <div style="margin-top:32px;padding:20px;background:rgba(21,101,192,0.06);border:1px solid rgba(21,101,192,0.2);border-radius:var(--radius-sm);">
+          <div style="display:flex;gap:32px;flex-wrap:wrap;">
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">3 Tahun</div><div style="font-size:0.8rem;color:var(--text-muted);">Durasi Belajar</div></div>
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">6 Bulan</div><div style="font-size:0.8rem;color:var(--text-muted);">PKL Industri</div></div>
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">92%</div><div style="font-size:0.8rem;color:var(--text-muted);">Tersalurkan Kerja</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-section"><div class="divider-inner"></div></div>
+
+<!-- AK -->
+<section id="ak" class="jurusan-section" style="background:var(--primary-dark)">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:center;">
+      <div class="reveal-left">
+        <div class="jurusan-detail-header">
+          <img class="jurusan-detail-logo" src="assets/images/logo-ak.png" alt="Logo AK" />
+          <div>
+            <span class="jurusan-tag-box" style="background:rgba(27,94,32,0.1);border-color:rgba(27,94,32,0.3);color:#81c784;"><i class="fas fa-calculator"></i> AK</span>
+            <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">Akuntansi &amp; <span>Keuangan</span></h2>
+          </div>
+        </div>
+        <div class="gold-line"></div>
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Program Akuntansi membekali siswa kemampuan mengelola keuangan, menyusun laporan akuntansi, menghitung pajak, dan mengelola administrasi perkantoran secara profesional sesuai standar industri keuangan dan bisnis.</p>
+        <div class="competency-grid">
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Akuntansi Keuangan Dasar &amp; Lanjut</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Perpajakan &amp; Bea Cukai</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Aplikasi Akuntansi (MYOB, SAP)</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Administrasi Perbankan</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Manajemen Keuangan Bisnis</span></div>
+          <div class="competency-item"><i class="fas fa-check-circle"></i><span>Spreadsheet &amp; Analisis Data</span></div>
+        </div>
+        <div style="margin-top:32px;padding:20px;background:rgba(27,94,32,0.06);border:1px solid rgba(27,94,32,0.2);border-radius:var(--radius-sm);">
+          <div style="display:flex;gap:32px;flex-wrap:wrap;">
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">3 Tahun</div><div style="font-size:0.8rem;color:var(--text-muted);">Durasi Belajar</div></div>
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">6 Bulan</div><div style="font-size:0.8rem;color:var(--text-muted);">PKL Industri</div></div>
+            <div><div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--gold-primary);">90%</div><div style="font-size:0.8rem;color:var(--text-muted);">Tersalurkan Kerja</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="assets/images/gedung.jpg" alt="Lab Akuntansi" class="jurusan-img" />
+        <div style="margin-top:24px;">
+          <h4 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:16px;">Prospek Karir Lulusan</h4>
+          <div class="career-grid">
+            <div class="career-item"><i class="fas fa-chart-line"></i><strong>Akuntan Perusahaan</strong></div>
+            <div class="career-item"><i class="fas fa-university"></i><strong>Staff Perbankan</strong></div>
+            <div class="career-item"><i class="fas fa-receipt"></i><strong>Staf Pajak</strong></div>
+            <div class="career-item"><i class="fas fa-store-alt"></i><strong>Wirausaha</strong></div>
+            <div class="career-item"><i class="fas fa-file-invoice-dollar"></i><strong>Auditor Junior</strong></div>
+            <div class="career-item"><i class="fas fa-graduation-cap"></i><strong>Kuliah Ekonomi</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DAFTAR -->
+<section style="background:linear-gradient(135deg,#1a0a0e,#0d0d0d,#1a0a0e);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,16,46,0.12),transparent 65%);"></div>
+  <div class="particles"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <span class="section-badge" style="margin:0 auto 20px;display:inline-flex;">Bergabunglah Sekarang</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:20px;color:var(--text-primary);">Pilih Jurusan <span style="background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Impianmu</span></h2>
+    <p style="color:var(--text-secondary);max-width:600px;margin:0 auto 40px;line-height:1.8;">Konsultasikan pilihan jurusanmu bersama kami. Tim konselor sekolah siap membantu mengarahkan minat dan bakatmu.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="kontak.html" class="btn btn-gold"><i class="fas fa-paper-plane"></i> Daftar Sekarang</a>
+      <a href="kontak.html" class="btn btn-outline"><i class="fas fa-phone"></i> Konsultasi Gratis</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="footer-brand-text"><div class="name">SMK Bangun Nusa Bangsa</div><div class="sub">Cibinong, Bogor</div></div></div><p class="footer-about">Lembaga pendidikan kejuruan yang berkomitmen mencetak generasi muda kompeten dan siap berkontribusi bagi nusa dan bangsa.</p><div class="footer-social"><a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-btn"><i class="fab fa-instagram"></i></a><a href="#" class="social-btn"><i class="fab fa-youtube"></i></a><a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div><h4 class="footer-heading">Navigasi</h4><div class="footer-links"><a href="index.html">Beranda</a><a href="profil.html">Profil Sekolah</a><a href="jurusan.html">Program Jurusan</a><a href="berita.html">Berita &amp; Info</a><a href="galeri.html">Galeri Foto</a><a href="kontak.html">Hubungi Kami</a></div></div>
+      <div><h4 class="footer-heading">Program Keahlian</h4><div class="footer-links"><a href="#tkr">TKR &ndash; Teknik Kendaraan Ringan</a><a href="#tkj">TKJ &ndash; Teknik Komputer &amp; Jaringan</a><a href="#ak">AK &ndash; Akuntansi &amp; Keuangan</a></div></div>
+      <div><h4 class="footer-heading">Kontak</h4><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Jl. Raya Cibinong, Bogor, Jawa Barat</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>(021) 8756-xxxx</span></div><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@smkbangunnusabangsa.sch.id</span></div><div class="footer-contact-item"><i class="fas fa-clock"></i><span>Senin &ndash; Sabtu: 07.00 &ndash; 16.00 WIB</span></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 <span>SMK Bangun Nusa Bangsa</span>. Hak Cipta Dilindungi.</p><p>Dibuat dengan <span>&#10084;</span> untuk Pendidikan Indonesia</p></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

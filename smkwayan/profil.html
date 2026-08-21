@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Profil SMK Bangun Nusa Bangsa Cibinong - Sejarah, Visi Misi, Struktur Organisasi, dan Data Sekolah." />
+  <title>Profil Sekolah | SMK Bangun Nusa Bangsa</title>
+  <link rel="icon" href="assets/images/logo-smk.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .accordion-item { background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; transition: var(--transition); }
+    .accordion-item.open { border-color: var(--border-hover); }
+    .accordion-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; font-weight: 600; color: var(--text-primary); transition: var(--transition); gap: 12px; }
+    .accordion-header:hover { color: var(--gold-primary); }
+    .accordion-header i.icon { color: var(--gold-primary); font-size: 1.1rem; min-width: 20px; }
+    .accordion-arrow { color: var(--text-muted); transition: transform 0.3s; }
+    .accordion-item.open .accordion-arrow { transform: rotate(180deg); color: var(--gold-primary); }
+    .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .accordion-body-inner { padding: 0 24px 20px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; border-top: 1px solid var(--border-color); padding-top: 16px; }
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table tr { border-bottom: 1px solid var(--border-color); }
+    .data-table tr:last-child { border-bottom: none; }
+    .data-table td { padding: 14px 16px; font-size: 0.9rem; }
+    .data-table td:first-child { color: var(--text-muted); width: 45%; }
+    .data-table td:last-child { color: var(--text-primary); font-weight: 500; }
+    .struktur-card { background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; text-align: center; transition: var(--transition); }
+    .struktur-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .struktur-avatar { width: 80px; height: 80px; background: var(--gradient-red); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: #fff; }
+    .struktur-name { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .struktur-role { font-size: 0.8rem; color: var(--gold-primary); font-weight: 500; letter-spacing: 0.5px; }
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--red-primary), var(--gold-primary)); }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-dot { position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; background: var(--gold-primary); border-radius: 50%; border: 2px solid var(--primary-dark); box-shadow: 0 0 0 3px rgba(201,168,76,0.3); }
+    .timeline-year { font-size: 0.8rem; color: var(--gold-primary); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+    .timeline-title { font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .timeline-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+    .extracurricular-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .extracurricular-item { background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 20px; display: flex; align-items: center; gap: 14px; transition: var(--transition); }
+    .extracurricular-item:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+    .extracurricular-item i { font-size: 1.4rem; color: var(--gold-primary); min-width: 24px; }
+    .extracurricular-item span { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
+  </style>
+</head>
+<body>
+<div id="preloader">
+  <img class="preloader-logo" src="assets/images/logo-smk.png" alt="Logo SMK" />
+  <p class="preloader-text">SMK Bangun Nusa Bangsa</p>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+<header id="header">
+  <nav class="nav-container">
+    <a href="index.html" class="nav-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="brand-text"><span class="brand-name">SMK Bangun Nusa Bangsa</span><span class="brand-sub">Cibinong &middot; Terakreditasi</span></div></a>
+    <div class="nav-links"><a href="index.html">Beranda</a><a href="profil.html" class="active">Profil</a><a href="jurusan.html">Jurusan</a><a href="berita.html">Berita</a><a href="galeri.html">Galeri</a><a href="kontak.html">Kontak</a><a href="kontak.html" class="btn-nav-cta">Hubungi Kami</a></div>
+    <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav class="mobile-nav"><a href="index.html">Beranda</a><a href="profil.html" class="active">Profil</a><a href="jurusan.html">Jurusan</a><a href="berita.html">Berita</a><a href="galeri.html">Galeri</a><a href="kontak.html">Kontak</a></nav>
+</header>
+<section class="page-hero">
+  <div class="particles"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Profil Sekolah</span></div>
+      <h1 class="page-hero-title">Profil <span>Sekolah</span></h1>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-secondary);max-width:600px;line-height:1.8;">Mengenal lebih dekat SMK Bangun Nusa Bangsa &mdash; sejarah, visi misi, struktur organisasi, dan komitmen kami untuk pendidikan Indonesia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DATA SEKOLAH -->
+<section style="background:var(--secondary-dark)">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:center;">
+      <div class="reveal-left">
+        <span class="section-badge">Identitas Sekolah</span>
+        <h2 class="section-title">Data <span>Sekolah</span></h2>
+        <div class="gold-line"></div>
+        <div class="card" style="padding:0;">
+          <table class="data-table">
+            <tr><td><i class="fas fa-school" style="color:var(--gold-primary);margin-right:8px;"></i>Nama Sekolah</td><td>SMK Bangun Nusa Bangsa</td></tr>
+            <tr><td><i class="fas fa-id-badge" style="color:var(--gold-primary);margin-right:8px;"></i>NPSN</td><td>20247XXX</td></tr>
+            <tr><td><i class="fas fa-map-marker-alt" style="color:var(--gold-primary);margin-right:8px;"></i>Alamat</td><td>Jl. Raya Cibinong, Bogor, Jawa Barat</td></tr>
+            <tr><td><i class="fas fa-city" style="color:var(--gold-primary);margin-right:8px;"></i>Kabupaten/Kota</td><td>Bogor</td></tr>
+            <tr><td><i class="fas fa-certificate" style="color:var(--gold-primary);margin-right:8px;"></i>Akreditasi</td><td><span class="tag tag-gold">A (Amat Baik)</span></td></tr>
+            <tr><td><i class="fas fa-landmark" style="color:var(--gold-primary);margin-right:8px;"></i>Status Sekolah</td><td>Swasta</td></tr>
+            <tr><td><i class="fas fa-calendar" style="color:var(--gold-primary);margin-right:8px;"></i>Tahun Berdiri</td><td>2008</td></tr>
+            <tr><td><i class="fas fa-phone" style="color:var(--gold-primary);margin-right:8px;"></i>Telepon</td><td>(021) 8756-xxxx</td></tr>
+            <tr><td><i class="fas fa-envelope" style="color:var(--gold-primary);margin-right:8px;"></i>Email</td><td>info@smkbangunnusabangsa.sch.id</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="assets/images/gedung.jpg" alt="Gedung SMK Bangun Nusa Bangsa" style="border-radius:var(--radius-lg);height:460px;object-fit:cover;width:100%;box-shadow:var(--shadow-dark);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISI MISI -->
+<section style="background:var(--primary-dark)">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-badge">Landasan Sekolah</span>
+      <h2 class="section-title">Visi &amp; <span>Misi</span></h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div class="grid-2" style="gap:32px;">
+      <div class="card reveal-left">
+        <div class="icon-box"><i class="fas fa-eye"></i></div>
+        <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--text-primary);margin-bottom:16px;">Visi</h3>
+        <p style="color:var(--text-secondary);line-height:1.8;font-style:italic;font-size:1.05rem;">&ldquo;Menjadi SMK unggul, kompetitif, dan berkarakter yang menghasilkan lulusan siap kerja, mandiri, dan berdaya saing tinggi di era global.&rdquo;</p>
+      </div>
+      <div class="card reveal-right">
+        <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+        <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--text-primary);margin-bottom:16px;">Misi</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:var(--gold-primary);font-weight:700;min-width:24px;">01</span><p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">Menyelenggarakan pendidikan dan pelatihan kejuruan yang berkualitas dan relevan dengan kebutuhan industri.</p></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:var(--gold-primary);font-weight:700;min-width:24px;">02</span><p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">Membentuk karakter siswa yang berakhlak mulia, disiplin, dan bertanggung jawab berdasarkan nilai Pancasila.</p></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:var(--gold-primary);font-weight:700;min-width:24px;">03</span><p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">Menjalin kemitraan strategis dengan dunia usaha dan industri untuk mendukung praktik kerja dan rekrutmen.</p></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:var(--gold-primary);font-weight:700;min-width:24px;">04</span><p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">Mengembangkan kompetensi guru dan tenaga kependidikan secara berkelanjutan.</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:32px;" class="card reveal">
+      <div class="icon-box"><i class="fas fa-heart"></i></div>
+      <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--text-primary);margin-bottom:16px;">Nilai-Nilai Sekolah</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;">
+        <div style="text-align:center;padding:16px;background:var(--surface);border-radius:var(--radius-sm);"><i class="fas fa-star" style="color:var(--gold-primary);font-size:1.5rem;margin-bottom:8px;display:block;"></i><strong style="color:var(--text-primary);">Integritas</strong></div>
+        <div style="text-align:center;padding:16px;background:var(--surface);border-radius:var(--radius-sm);"><i class="fas fa-users" style="color:var(--gold-primary);font-size:1.5rem;margin-bottom:8px;display:block;"></i><strong style="color:var(--text-primary);">Kolaborasi</strong></div>
+        <div style="text-align:center;padding:16px;background:var(--surface);border-radius:var(--radius-sm);"><i class="fas fa-lightbulb" style="color:var(--gold-primary);font-size:1.5rem;margin-bottom:8px;display:block;"></i><strong style="color:var(--text-primary);">Inovasi</strong></div>
+        <div style="text-align:center;padding:16px;background:var(--surface);border-radius:var(--radius-sm);"><i class="fas fa-award" style="color:var(--gold-primary);font-size:1.5rem;margin-bottom:8px;display:block;"></i><strong style="color:var(--text-primary);">Keunggulan</strong></div>
+        <div style="text-align:center;padding:16px;background:var(--surface);border-radius:var(--radius-sm);"><i class="fas fa-hands-helping" style="color:var(--gold-primary);font-size:1.5rem;margin-bottom:8px;display:block;"></i><strong style="color:var(--text-primary);">Kepedulian</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRUKTUR ORGANISASI -->
+<section style="background:var(--secondary-dark)">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-badge">Manajemen Sekolah</span>
+      <h2 class="section-title">Struktur <span>Organisasi</span></h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div style="text-align:center;margin-bottom:40px;" class="reveal">
+      <div style="display:inline-block;background:var(--gradient-red);border-radius:var(--radius-md);padding:28px 40px;box-shadow:var(--shadow-red);">
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Kepala Sekolah</div>
+        <div style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:#fff;">Drs. H. Ahmad Fauzi, M.Pd</div>
+      </div>
+    </div>
+    <div class="grid-4" style="gap:20px;margin-bottom:28px;">
+      <div class="struktur-card reveal"><div class="struktur-avatar">WK</div><div class="struktur-name">Dra. Siti Rahayu</div><div class="struktur-role">Waka Kurikulum</div></div>
+      <div class="struktur-card reveal delay-1"><div class="struktur-avatar" style="background:var(--gradient-gold);color:var(--primary-dark);">WS</div><div class="struktur-name">Budi Santoso, S.Pd</div><div class="struktur-role">Waka Kesiswaan</div></div>
+      <div class="struktur-card reveal delay-2"><div class="struktur-avatar" style="background:linear-gradient(135deg,#1565c0,#1e88e5);">WH</div><div class="struktur-name">Dedi Kurniawan, ST</div><div class="struktur-role">Waka Humas</div></div>
+      <div class="struktur-card reveal delay-3"><div class="struktur-avatar" style="background:linear-gradient(135deg,#1b5e20,#43a047);">WS</div><div class="struktur-name">Rini Handayani, S.Pd</div><div class="struktur-role">Waka Sarana</div></div>
+    </div>
+    <div class="grid-3" style="gap:20px;">
+      <div class="struktur-card reveal"><div class="struktur-avatar" style="font-size:1.2rem;background:var(--surface);color:var(--gold-primary);">TKR</div><div class="struktur-name">Andi Wijaya, S.T</div><div class="struktur-role">Ka. Jurusan TKR</div></div>
+      <div class="struktur-card reveal delay-2"><div class="struktur-avatar" style="font-size:1.2rem;background:var(--surface);color:var(--gold-primary);">TKJ</div><div class="struktur-name">Fajar Nugroho, S.Kom</div><div class="struktur-role">Ka. Jurusan TKJ</div></div>
+      <div class="struktur-card reveal delay-4"><div class="struktur-avatar" style="font-size:1.2rem;background:var(--surface);color:var(--gold-primary);">AK</div><div class="struktur-name">Maya Dewi, S.E</div><div class="struktur-role">Ka. Jurusan Akuntansi</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEJARAH -->
+<section style="background:var(--primary-dark)">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:flex-start;">
+      <div class="reveal-left">
+        <span class="section-badge">Perjalanan Kami</span>
+        <h2 class="section-title">Sejarah <span>Sekolah</span></h2>
+        <div class="gold-line"></div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2008</div><div class="timeline-title">Pendirian SMK Bangun Nusa Bangsa</div><div class="timeline-desc">Sekolah didirikan dengan tekad kuat untuk menyediakan pendidikan kejuruan berkualitas di Cibinong, Bogor.</div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2010</div><div class="timeline-title">Akreditasi Pertama</div><div class="timeline-desc">Berhasil meraih akreditasi pertama dari Badan Akreditasi Nasional dengan nilai memuaskan.</div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2013</div><div class="timeline-title">Pembukaan Jurusan TKJ</div><div class="timeline-desc">Menjawab kebutuhan industri digital, jurusan Teknik Komputer dan Jaringan resmi dibuka.</div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2016</div><div class="timeline-title">Gedung Baru &amp; Fasilitas Modern</div><div class="timeline-desc">Pembangunan gedung baru dengan fasilitas bengkel modern dan laboratorium komputer canggih.</div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2020</div><div class="timeline-title">Akreditasi A (Amat Baik)</div><div class="timeline-desc">SMK BNB berhasil meraih akreditasi tertinggi &ldquo;A&rdquo; dari BAN-S/M, membuktikan kualitas pendidikan.</div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024</div><div class="timeline-title">Kemitraan Industri Nasional</div><div class="timeline-desc">Menandatangani MoU dengan lebih dari 20 perusahaan nasional untuk program magang dan rekrutmen lulusan.</div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="section-badge">Ekstrakurikuler</span>
+        <h2 class="section-title">Kegiatan <span>Siswa</span></h2>
+        <div class="gold-line"></div>
+        <p style="color:var(--text-secondary);margin-bottom:28px;line-height:1.8;">Kami menyediakan berbagai kegiatan ekstrakurikuler untuk mengembangkan bakat dan minat siswa secara menyeluruh.</p>
+        <div class="extracurricular-grid">
+          <div class="extracurricular-item"><i class="fas fa-football-ball"></i><span>Sepak Bola</span></div>
+          <div class="extracurricular-item"><i class="fas fa-volleyball-ball"></i><span>Voli</span></div>
+          <div class="extracurricular-item"><i class="fas fa-chess"></i><span>Paskibra</span></div>
+          <div class="extracurricular-item"><i class="fas fa-music"></i><span>Seni Musik</span></div>
+          <div class="extracurricular-item"><i class="fas fa-palette"></i><span>Seni Rupa</span></div>
+          <div class="extracurricular-item"><i class="fas fa-shield-alt"></i><span>Pramuka</span></div>
+          <div class="extracurricular-item"><i class="fas fa-fist-raised"></i><span>Pencak Silat</span></div>
+          <div class="extracurricular-item"><i class="fas fa-laptop-code"></i><span>Robotika</span></div>
+          <div class="extracurricular-item"><i class="fas fa-camera"></i><span>Fotografi</span></div>
+          <div class="extracurricular-item"><i class="fas fa-microphone"></i><span>Debat &amp; Orasi</span></div>
+          <div class="extracurricular-item"><i class="fas fa-heartbeat"></i><span>PMR</span></div>
+          <div class="extracurricular-item"><i class="fas fa-book"></i><span>Kir &amp; Penelitian</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--secondary-dark)">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-badge">Pertanyaan Umum</span>
+      <h2 class="section-title">FAQ <span>Sekolah</span></h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div style="max-width:800px;margin:0 auto;" class="reveal">
+      <div class="accordion-item"><div class="accordion-header"><i class="fas fa-question-circle icon"></i><span>Apa saja jurusan yang tersedia di SMK Bangun Nusa Bangsa?</span><i class="fas fa-chevron-down accordion-arrow"></i></div><div class="accordion-body"><div class="accordion-body-inner">SMK Bangun Nusa Bangsa memiliki 3 program keahlian: Teknik Kendaraan Ringan (TKR), Teknik Komputer dan Jaringan (TKJ), serta Akuntansi dan Keuangan (AK). Setiap jurusan dirancang untuk mempersiapkan siswa sesuai dengan kebutuhan industri terkini.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><i class="fas fa-question-circle icon"></i><span>Bagaimana prosedur penerimaan siswa baru?</span><i class="fas fa-chevron-down accordion-arrow"></i></div><div class="accordion-body"><div class="accordion-body-inner">Penerimaan siswa baru melalui jalur PPDB (Penerimaan Peserta Didik Baru). Calon siswa dapat mendaftar secara online maupun datang langsung ke sekolah dengan membawa dokumen yang diperlukan seperti ijazah SMP/MTs, akta kelahiran, dan kartu keluarga.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><i class="fas fa-question-circle icon"></i><span>Apakah tersedia program beasiswa?</span><i class="fas fa-chevron-down accordion-arrow"></i></div><div class="accordion-body"><div class="accordion-body-inner">Ya, sekolah menyediakan beasiswa PIP (Program Indonesia Pintar) bagi siswa yang memenuhi syarat, serta beasiswa prestasi bagi siswa berprestasi di tingkat kabupaten, provinsi, maupun nasional.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><i class="fas fa-question-circle icon"></i><span>Apakah ada program magang ke industri?</span><i class="fas fa-chevron-down accordion-arrow"></i></div><div class="accordion-body"><div class="accordion-body-inner">Ya! Kami memiliki program Praktik Kerja Lapangan (PKL) selama 3-6 bulan yang bekerja sama dengan lebih dari 50 perusahaan mitra di berbagai sektor industri, mulai dari otomotif, teknologi informasi, hingga keuangan.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="footer-brand-text"><div class="name">SMK Bangun Nusa Bangsa</div><div class="sub">Cibinong, Bogor</div></div></div>
+        <p class="footer-about">Lembaga pendidikan kejuruan yang berkomitmen mencetak generasi muda kompeten, berkarakter mulia, dan siap berkontribusi bagi nusa dan bangsa.</p>
+        <div class="footer-social"><a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-btn"><i class="fab fa-instagram"></i></a><a href="#" class="social-btn"><i class="fab fa-youtube"></i></a><a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a></div>
+      </div>
+      <div><h4 class="footer-heading">Navigasi</h4><div class="footer-links"><a href="index.html">Beranda</a><a href="profil.html">Profil Sekolah</a><a href="jurusan.html">Program Jurusan</a><a href="berita.html">Berita &amp; Info</a><a href="galeri.html">Galeri Foto</a><a href="kontak.html">Hubungi Kami</a></div></div>
+      <div><h4 class="footer-heading">Program Keahlian</h4><div class="footer-links"><a href="jurusan.html#tkr">TKR</a><a href="jurusan.html#tkj">TKJ</a><a href="jurusan.html#ak">Akuntansi</a></div></div>
+      <div><h4 class="footer-heading">Kontak</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Jl. Raya Cibinong, Bogor, Jawa Barat</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(021) 8756-xxxx</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@smkbangunnusabangsa.sch.id</span></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Senin &ndash; Sabtu: 07.00 &ndash; 16.00 WIB</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 <span>SMK Bangun Nusa Bangsa</span>. Hak Cipta Dilindungi.</p><p>Dibuat dengan <span>&#10084;</span> untuk Pendidikan Indonesia</p></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

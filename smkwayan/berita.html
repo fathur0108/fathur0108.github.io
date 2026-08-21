@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Berita dan Pengumuman terbaru SMK Bangun Nusa Bangsa Cibinong." />
+  <title>Berita &amp; Pengumuman | SMK Bangun Nusa Bangsa</title>
+  <link rel="icon" href="assets/images/logo-smk.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .tab-bar { display: flex; gap: 4px; background: var(--surface); border-radius: var(--radius-sm); padding: 4px; margin-bottom: 40px; width: fit-content; }
+    .tab-btn { padding: 10px 24px; font-size: 0.875rem; font-weight: 600; color: var(--text-muted); background: transparent; border: none; border-radius: calc(var(--radius-sm) - 4px); cursor: pointer; transition: var(--transition); font-family: var(--font-body); }
+    .tab-btn.active { background: var(--gradient-red); color: #fff; box-shadow: var(--shadow-red); }
+    .tab-btn:hover:not(.active) { color: var(--text-primary); background: var(--glass-bg); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .featured-news { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; margin-bottom: 48px; }
+    .news-featured-card { background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; transition: var(--transition); }
+    .news-featured-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--shadow-dark); }
+    .news-featured-img { height: 360px; object-fit: cover; width: 100%; transition: transform 0.5s; }
+    .news-featured-card:hover .news-featured-img { transform: scale(1.03); }
+    .news-featured-img-wrap { overflow: hidden; height: 360px; }
+    .news-featured-body { padding: 28px; }
+    .news-side-list { display: flex; flex-direction: column; gap: 16px; }
+    .news-side-item { display: flex; gap: 14px; background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; transition: var(--transition); cursor: pointer; }
+    .news-side-item:hover { border-color: var(--border-hover); transform: translateX(6px); }
+    .news-side-img { width: 80px; height: 80px; object-fit: cover; border-radius: var(--radius-sm); flex-shrink: 0; }
+    .news-side-body h4 { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; line-height: 1.4; }
+    .news-side-body p { font-size: 0.775rem; color: var(--text-muted); }
+    .pengumuman-list { display: flex; flex-direction: column; gap: 16px; }
+    .pengumuman-item { display: flex; gap: 20px; align-items: flex-start; background: var(--gradient-card); border: 1px solid var(--border-color); border-left: 4px solid var(--red-primary); border-radius: var(--radius-sm); padding: 20px 24px; transition: var(--transition); }
+    .pengumuman-item:hover { border-left-color: var(--gold-primary); transform: translateX(6px); }
+    .pengumuman-date { min-width: 56px; text-align: center; }
+    .pengumuman-date .day { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--gold-primary); line-height: 1; }
+    .pengumuman-date .month { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
+    .pengumuman-divider { width: 1px; background: var(--border-color); align-self: stretch; }
+    .pengumuman-content h4 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .pengumuman-content p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+    .pagination { display: flex; gap: 8px; justify-content: center; margin-top: 48px; }
+    .page-btn { width: 40px; height: 40px; background: var(--gradient-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: var(--transition); }
+    .page-btn.active, .page-btn:hover { background: var(--gradient-red); border-color: var(--red-primary); color: #fff; }
+    @media(max-width:768px){ .featured-news{grid-template-columns:1fr;} .news-featured-img-wrap{height:240px;} .news-featured-img{height:240px;} }
+  </style>
+</head>
+<body>
+<div id="preloader"><img class="preloader-logo" src="assets/images/logo-smk.png" alt="Logo SMK" /><p class="preloader-text">SMK Bangun Nusa Bangsa</p><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div>
+<header id="header">
+  <nav class="nav-container">
+    <a href="index.html" class="nav-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="brand-text"><span class="brand-name">SMK Bangun Nusa Bangsa</span><span class="brand-sub">Cibinong &middot; Terakreditasi</span></div></a>
+    <div class="nav-links"><a href="index.html">Beranda</a><a href="profil.html">Profil</a><a href="jurusan.html">Jurusan</a><a href="berita.html" class="active">Berita</a><a href="galeri.html">Galeri</a><a href="kontak.html">Kontak</a><a href="kontak.html" class="btn-nav-cta">Hubungi Kami</a></div>
+    <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav class="mobile-nav"><a href="index.html">Beranda</a><a href="profil.html">Profil</a><a href="jurusan.html">Jurusan</a><a href="berita.html" class="active">Berita</a><a href="galeri.html">Galeri</a><a href="kontak.html">Kontak</a></nav>
+</header>
+<section class="page-hero">
+  <div class="particles"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Berita &amp; Pengumuman</span></div>
+      <h1 class="page-hero-title">Berita &amp; <span>Pengumuman</span></h1>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-secondary);max-width:580px;line-height:1.8;">Informasi terkini seputar kegiatan, prestasi, dan pengumuman resmi SMK Bangun Nusa Bangsa.</p>
+    </div>
+  </div>
+</section>
+<section style="background:var(--primary-dark)">
+  <div class="container">
+    <div class="tab-bar reveal">
+      <button class="tab-btn active" data-tab="berita">Berita Terkini</button>
+      <button class="tab-btn" data-tab="pengumuman">Pengumuman</button>
+      <button class="tab-btn" data-tab="prestasi">Prestasi</button>
+    </div>
+    <!-- TAB BERITA -->
+    <div class="tab-content active" id="tab-berita">
+      <div class="featured-news">
+        <div class="news-featured-card">
+          <div class="news-featured-img-wrap"><img class="news-featured-img" src="assets/images/gedung.jpg" alt="Berita Utama" /></div>
+          <div class="news-featured-body">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;"><span class="tag tag-red">Prestasi</span><span style="font-size:0.8rem;color:var(--text-muted);">15 Agustus 2026</span></div>
+            <h2 style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:12px;line-height:1.3;">Siswa SMK BNB Raih Juara 1 LKS Tingkat Provinsi Jawa Barat Tahun 2026</h2>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:20px;">Tim TKJ SMK Bangun Nusa Bangsa berhasil meraih juara pertama dalam ajang Lomba Kompetensi Siswa (LKS) bidang IT Network Systems Administration tingkat Provinsi Jawa Barat. Pencapaian luar biasa ini merupakan buah dari kerja keras dan dedikasi para siswa serta pembimbing...</p>
+            <a href="#" class="btn btn-primary" style="padding:10px 24px;"><i class="fas fa-arrow-right"></i> Baca Selengkapnya</a>
+          </div>
+        </div>
+        <div class="news-side-list">
+          <div class="news-side-item"><img class="news-side-img" src="assets/images/gedung.jpg" alt="Berita" /><div class="news-side-body"><div style="display:flex;gap:8px;margin-bottom:6px;"><span class="tag tag-gold" style="font-size:0.68rem;">Kerjasama</span></div><h4>MoU dengan 5 Perusahaan Otomotif Nasional</h4><p>10 Agustus 2026</p></div></div>
+          <div class="news-side-item"><img class="news-side-img" src="assets/images/gedung.jpg" alt="Berita" /><div class="news-side-body"><div style="display:flex;gap:8px;margin-bottom:6px;"><span class="tag tag-dark" style="font-size:0.68rem;">Akademik</span></div><h4>Tahun Ajaran Baru 2026/2027 Resmi Dimulai</h4><p>5 Agustus 2026</p></div></div>
+          <div class="news-side-item"><img class="news-side-img" src="assets/images/gedung.jpg" alt="Berita" /><div class="news-side-body"><div style="display:flex;gap:8px;margin-bottom:6px;"><span class="tag tag-red" style="font-size:0.68rem;">Kegiatan</span></div><h4>Kunjungan Industri Siswa TKR ke Pabrik Toyota</h4><p>28 Juli 2026</p></div></div>
+          <div class="news-side-item"><img class="news-side-img" src="assets/images/gedung.jpg" alt="Berita" /><div class="news-side-body"><div style="display:flex;gap:8px;margin-bottom:6px;"><span class="tag tag-gold" style="font-size:0.68rem;">Program</span></div><h4>Program Sertifikasi Cisco untuk Siswa TKJ</h4><p>20 Juli 2026</p></div></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="news-card reveal"><div class="news-card-img-wrap"><img class="news-card-img" src="assets/images/gedung.jpg" alt="Berita" /></div><div class="news-card-body"><div class="news-card-meta"><span class="tag tag-red">Kegiatan</span><span class="dot"></span><span>18 Juli 2026</span></div><h3 class="news-card-title">Pelepasan Siswa PKL Angkatan 2025/2026</h3><p class="news-card-excerpt">Sebanyak 380 siswa dari tiga jurusan resmi diberangkatkan untuk mengikuti program Praktik Kerja Lapangan di berbagai perusahaan mitra.</p></div></div>
+        <div class="news-card reveal delay-2"><div class="news-card-img-wrap"><img class="news-card-img" src="assets/images/gedung.jpg" alt="Berita" /></div><div class="news-card-body"><div class="news-card-meta"><span class="tag tag-gold">Prestasi</span><span class="dot"></span><span>10 Juli 2026</span></div><h3 class="news-card-title">Siswa AK Juara 1 Olimpiade Akuntansi Tingkat Kab. Bogor</h3><p class="news-card-excerpt">Dua siswa jurusan Akuntansi berhasil meraih medali emas dalam olimpiade akuntansi tingkat kabupaten yang diikuti 45 SMK se-Bogor.</p></div></div>
+        <div class="news-card reveal delay-4"><div class="news-card-img-wrap"><img class="news-card-img" src="assets/images/gedung.jpg" alt="Berita" /></div><div class="news-card-body"><div class="news-card-meta"><span class="tag tag-dark">Fasilitas</span><span class="dot"></span><span>2 Juli 2026</span></div><h3 class="news-card-title">Bengkel TKR Dilengkapi Alat Diagnosa Engine Scanner Terbaru</h3><p class="news-card-excerpt">SMK BNB kembali meningkatkan kualitas fasilitas dengan menambah perangkat engine scanner generasi terbaru untuk bengkel TKR.</p></div></div>
+      </div>
+      <div class="pagination">
+        <div class="page-btn active">1</div>
+        <div class="page-btn">2</div>
+        <div class="page-btn">3</div>
+        <div class="page-btn"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </div>
+    <!-- TAB PENGUMUMAN -->
+    <div class="tab-content" id="tab-pengumuman">
+      <div class="pengumuman-list">
+        <div class="pengumuman-item"><div class="pengumuman-date"><div class="day">20</div><div class="month">Agu</div></div><div class="pengumuman-divider"></div><div class="pengumuman-content"><h4>Jadwal Ujian Tengah Semester (UTS) Ganjil 2026/2027</h4><p>UTS Ganjil akan dilaksanakan pada tanggal 28 September &ndash; 5 Oktober 2026. Siswa diwajibkan hadir 15 menit sebelum ujian dimulai.</p></div></div>
+        <div class="pengumuman-item"><div class="pengumuman-date"><div class="day">15</div><div class="month">Agu</div></div><div class="pengumuman-divider"></div><div class="pengumuman-content"><h4>Pembayaran SPP Bulan Agustus 2026</h4><p>Pembayaran SPP bulan Agustus dapat dilakukan mulai tanggal 1-20 Agustus 2026 melalui bank atau langsung ke bagian keuangan sekolah.</p></div></div>
+        <div class="pengumuman-item"><div class="pengumuman-date"><div class="day">10</div><div class="month">Agu</div></div><div class="pengumuman-divider"></div><div class="pengumuman-content"><h4>Pendaftaran Ekstrakurikuler Tahun Ajaran 2026/2027</h4><p>Pendaftaran ekstrakurikuler dibuka mulai 12-25 Agustus 2026. Siswa dapat mendaftar maksimal 2 pilihan ekstrakurikuler.</p></div></div>
+        <div class="pengumuman-item"><div class="pengumuman-date"><div class="day">05</div><div class="month">Agu</div></div><div class="pengumuman-divider"></div><div class="pengumuman-content"><h4>Orientasi Siswa Baru (MPLS) Tahun Ajaran 2026/2027</h4><p>MPLS akan dilaksanakan pada 8-10 Agustus 2026. Siswa baru wajib mengenakan seragam lengkap dan membawa perlengkapan yang telah ditentukan.</p></div></div>
+        <div class="pengumuman-item"><div class="pengumuman-date"><div class="day">28</div><div class="month">Jul</div></div><div class="pengumuman-divider"></div><div class="pengumuman-content"><h4>Pengumuman Kelulusan Siswa Kelas XII Tahun 2025/2026</h4><p>Selamat kepada seluruh siswa kelas XII yang telah dinyatakan lulus dengan tingkat kelulusan 100%. Pengambilan ijazah dilaksanakan mulai 5 Agustus 2026.</p></div></div>
+        <div class="pengumuman-item"><div class="pengumuman-date"><div class="day">20</div><div class="month">Jul</div></div><div class="pengumuman-divider"></div><div class="pengumuman-content"><h4>Penerimaan Siswa Baru (PSB) Gelombang 2 Masih Dibuka</h4><p>Bagi calon siswa yang belum mendaftar, PSB gelombang 2 masih dibuka hingga 10 Agustus 2026. Segera hubungi panitia PSB sekolah.</p></div></div>
+      </div>
+    </div>
+    <!-- TAB PRESTASI -->
+    <div class="tab-content" id="tab-prestasi">
+      <div class="grid-3">
+        <div class="card reveal"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:48px;height:48px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">&#127941;</div><div><div style="font-size:0.75rem;color:var(--gold-primary);font-weight:600;letter-spacing:1px;">JUARA 1</div><div style="font-size:0.8rem;color:var(--text-muted);">Tingkat Provinsi</div></div></div><h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:8px;">LKS IT Network &ndash; Jawa Barat 2026</h3><p style="font-size:0.85rem;color:var(--text-secondary);">Jurusan TKJ meraih juara 1 dalam Lomba Kompetensi Siswa bidang IT Network Systems Administration tingkat Provinsi Jawa Barat.</p></div>
+        <div class="card reveal delay-1"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:48px;height:48px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">&#127942;</div><div><div style="font-size:0.75rem;color:var(--gold-primary);font-weight:600;letter-spacing:1px;">JUARA 2</div><div style="font-size:0.8rem;color:var(--text-muted);">Tingkat Nasional</div></div></div><h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:8px;">Olimpiade Akuntansi Nasional 2025</h3><p style="font-size:0.85rem;color:var(--text-secondary);">Siswa jurusan Akuntansi berhasil meraih posisi kedua dalam olimpiade akuntansi tingkat nasional yang diikuti 350 peserta.</p></div>
+        <div class="card reveal delay-2"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:48px;height:48px;background:var(--gradient-red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">&#127941;</div><div><div style="font-size:0.75rem;color:var(--red-light);font-weight:600;letter-spacing:1px;">JUARA 1</div><div style="font-size:0.8rem;color:var(--text-muted);">Tingkat Kab. Bogor</div></div></div><h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:8px;">Lomba Debat Bahasa Inggris 2026</h3><p style="font-size:0.85rem;color:var(--text-secondary);">Tim debat Bahasa Inggris SMK BNB meraih juara pertama tingkat Kabupaten Bogor dalam kompetisi antar-SMK se-kabupaten.</p></div>
+        <div class="card reveal delay-1"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:48px;height:48px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">&#127941;</div><div><div style="font-size:0.75rem;color:var(--gold-primary);font-weight:600;letter-spacing:1px;">JUARA 1</div><div style="font-size:0.8rem;color:var(--text-muted);">Tingkat Kab. Bogor</div></div></div><h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:8px;">Futsal Antar-SMK Se-Bogor 2025</h3><p style="font-size:0.85rem;color:var(--text-secondary);">Tim futsal SMK BNB meraih trofi juara 1 dalam turnamen antar-SMK yang diikuti 32 tim dari seluruh Kabupaten Bogor.</p></div>
+        <div class="card reveal delay-2"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:48px;height:48px;background:var(--gradient-red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">&#127942;</div><div><div style="font-size:0.75rem;color:var(--red-light);font-weight:600;letter-spacing:1px;">JUARA 2</div><div style="font-size:0.8rem;color:var(--text-muted);">Tingkat Provinsi</div></div></div><h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:8px;">LKS Otomotif Jawa Barat 2025</h3><p style="font-size:0.85rem;color:var(--text-secondary);">Siswa TKR meraih juara 2 dalam Lomba Kompetensi Siswa bidang Automotive Technology tingkat Provinsi Jawa Barat.</p></div>
+        <div class="card reveal delay-3"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:48px;height:48px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">&#127941;</div><div><div style="font-size:0.75rem;color:var(--gold-primary);font-weight:600;letter-spacing:1px;">JUARA 1</div><div style="font-size:0.8rem;color:var(--text-muted);">Tingkat Kab. Bogor</div></div></div><h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--text-primary);margin-bottom:8px;">Lomba Karya Tulis Ilmiah 2025</h3><p style="font-size:0.85rem;color:var(--text-secondary);">KIR SMK BNB meraih juara 1 dalam lomba karya tulis ilmiah dengan tema inovasi teknologi ramah lingkungan.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><img src="assets/images/logo-smk.png" alt="Logo" /><div class="footer-brand-text"><div class="name">SMK Bangun Nusa Bangsa</div><div class="sub">Cibinong, Bogor</div></div></div><p class="footer-about">Lembaga pendidikan kejuruan yang berkomitmen mencetak generasi muda kompeten dan siap berkontribusi bagi nusa dan bangsa.</p><div class="footer-social"><a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-btn"><i class="fab fa-instagram"></i></a><a href="#" class="social-btn"><i class="fab fa-youtube"></i></a><a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div><h4 class="footer-heading">Navigasi</h4><div class="footer-links"><a href="index.html">Beranda</a><a href="profil.html">Profil Sekolah</a><a href="jurusan.html">Program Jurusan</a><a href="berita.html">Berita &amp; Info</a><a href="galeri.html">Galeri Foto</a><a href="kontak.html">Hubungi Kami</a></div></div>
+      <div><h4 class="footer-heading">Program Keahlian</h4><div class="footer-links"><a href="jurusan.html#tkr">TKR</a><a href="jurusan.html#tkj">TKJ</a><a href="jurusan.html#ak">Akuntansi</a></div></div>
+      <div><h4 class="footer-heading">Kontak</h4><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Jl. Raya Cibinong, Bogor, Jawa Barat</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>(021) 8756-xxxx</span></div><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@smkbangunnusabangsa.sch.id</span></div><div class="footer-contact-item"><i class="fas fa-clock"></i><span>Senin &ndash; Sabtu: 07.00 &ndash; 16.00 WIB</span></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 <span>SMK Bangun Nusa Bangsa</span>. Hak Cipta Dilindungi.</p><p>Dibuat dengan <span>&#10084;</span> untuk Pendidikan Indonesia</p></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>
