@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMK Bangun Nusa Bangsa | Pusat Keunggulan Vokasi & Kesiapan Kerja 4.0</title>
+  <meta name="description" content="SMK Bangun Nusa Bangsa - Sekolah Menengah Kejuruan unggulan berbasis industri dengan jurusan TKJ, TKR, dan Akuntansi. Siap kerja, berkarakter, dan berdaya saing global.">
+  <meta name="keywords" content="SMK Bangun Nusa Bangsa, SMK Unggulan, PPDB SMK, Jurusan TKJ, Jurusan TKR, Jurusan Akuntansi, Vokasi Siap Kerja">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%22 fill=%22%2310b981%22><text y=%2222%22 font-size=%2224%22>🎓</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-container">
+      <div class="top-info">
+        <span><i class="fa-solid fa-sparkles text-accent"></i> <strong>PPDB 2026/2027 Telah Dibuka!</strong> Dapatkan Potongan Biaya Masuk Gelombang 1.</span>
+      </div>
+      <div class="top-actions">
+        <a href="https://wa.me/6281234567890?text=Halo%20Admin%20SMK%20Bangun%20Nusa%20Bangsa,%20saya%20ingin%20tanya%20informasi%20PPDB" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Hotline: 0812-3456-7890</a>
+        <a href="mailto:info@smkbangunnusabangsa.sch.id"><i class="fa-regular fa-envelope"></i> info@smkbangunnusabangsa.sch.id</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-logo">
+          <img src="assets/images/logo_smk.jpg" alt="Logo SMK Bangun Nusa Bangsa" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">SMK BANGUN NUSA BANGSA</span>
+          <span class="brand-subtitle">Vocational Excellence & Innovation</span>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Beranda</a></li>
+          <li class="nav-item"><a href="#tentang" class="nav-link">Profil Sekolah</a></li>
+          <li class="nav-item"><a href="#jurusan" class="nav-link">Program Keahlian</a></li>
+          <li class="nav-item"><a href="#fasilitas" class="nav-link">Fasilitas & Mitra</a></li>
+          <li class="nav-item"><a href="#testimoni" class="nav-link">Testimoni & Prestasi</a></li>
+          <li class="nav-item"><a href="#kontak" class="nav-link">Kontak & Lokasi</a></li>
+        </ul>
+        <div class="nav-cta">
+          <button class="btn btn-primary btn-glow" onclick="openPpdbModal()">
+            <i class="fa-solid fa-paper-plane"></i> Daftar PPDB
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content" data-aos="fade-right" data-aos-duration="900">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>🚀 PENDIDIKAN VOKASI MASA DEPAN & SIAP KERJA 4.0</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Kuasai Keterampilan Masa Depan, <span class="gradient-text">Taklukkan Industri Global</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          SMK Bangun Nusa Bangsa menghadirkan kurikulum berbasis industri nyata, laboratorium berteknologi canggih, dan sertifikasi profesi resmi yang mencetak lulusan kompeten, berkarakter, dan langsung terserap kerja.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg btn-glow" onclick="openPpdbModal()">
+            <i class="fa-solid fa-bolt"></i> Daftar PPDB 2026/2027
+          </button>
+          <a href="#jurusan" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-compass"></i> Jelajahi Jurusan
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <span class="avatar av-1"><i class="fa-solid fa-user-graduate"></i></span>
+            <span class="avatar av-2"><i class="fa-solid fa-user-check"></i></span>
+            <span class="avatar av-3"><i class="fa-solid fa-user-tie"></i></span>
+            <span class="avatar av-count">+2.5K</span>
+          </div>
+          <div class="trust-text">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>Terakreditasi Baik & Dipercaya <strong>50+ Industri Nasional</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media" data-aos="fade-left" data-aos-duration="1000">
+        <div class="hero-image-card">
+          <div class="image-wrapper">
+            <img src="assets/images/hero.jpg" alt="Gedung Kampus SMK Bangun Nusa Bangsa" class="hero-main-img" onerror="this.src='assets/images/gedung_sekolah.jpg'">
+            <div class="image-overlay"></div>
+          </div>
+          
+          <!-- Floating Badge 1: Kesiapan Kerja -->
+          <div class="floating-badge badge-top-left" data-aos="zoom-in" data-aos-delay="400">
+            <div class="badge-icon bg-emerald"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="badge-info">
+              <span class="badge-value">92%</span>
+              <span class="badge-label">Lulusan Terserap Kerja</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2: Sertifikasi -->
+          <div class="floating-badge badge-bottom-right" data-aos="zoom-in" data-aos-delay="600">
+            <div class="badge-icon bg-cyan"><i class="fa-solid fa-award"></i></div>
+            <div class="badge-info">
+              <span class="badge-value">BNSP & Industri</span>
+              <span class="badge-label">Sertifikasi Internasional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Highlights Bar -->
+  <section class="highlights-bar">
+    <div class="container highlights-grid">
+      <div class="highlight-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="hi-icon"><i class="fa-solid fa-microchip"></i></div>
+        <div>
+          <h4>Teaching Factory (Tefa)</h4>
+          <p>Praktik kerja berbasis standar riil industri</p>
+        </div>
+      </div>
+      <div class="highlight-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="hi-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div>
+          <h4>Penyaluran Kerja Pasti</h4>
+          <p>Bursa Kerja Khusus (BKK) aktif & terpercaya</p>
+        </div>
+      </div>
+      <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="hi-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div>
+          <h4>Uji Kompetensi Nasional</h4>
+          <p>LSP P1 & sertifikasi vendor teknologi</p>
+        </div>
+      </div>
+      <div class="highlight-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="hi-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <h4>Karakter & Kedisiplinan</h4>
+          <p>Pembinaan etos kerja & kepemimpinan tangguh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami (Profil Sekolah) Section -->
+  <section class="section about-section" id="tentang">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-landmark"></i> PROFIL & KEUNGGULAN</span>
+        <h2 class="section-title">Profil Resmi <span class="gradient-text">SMK Bangun Nusa Bangsa</span></h2>
+        <p class="section-desc">Pusat pendidikan kejuruan terpadu yang bertekad membentuk generasi vokasi berintegritas tinggi, unggul dalam kompetensi teknologi, dan siap bersaing di dunia usaha & industri.</p>
+      </div>
+
+      <!-- School Profile Feature Showcase -->
+      <div class="school-profile-banner glass-panel" data-aos="fade-up">
+        <div class="profile-logo-wrapper">
+          <div class="logo-circle-glow">
+            <img src="assets/images/logo_smk.jpg" alt="Logo Resmi SMK Bangun Nusa Bangsa Cibinong" class="profile-school-logo">
+          </div>
+          <div class="school-accreditation-badge">
+            <i class="fa-solid fa-circle-check"></i> Terakreditasi Resmi
+          </div>
+        </div>
+
+        <div class="profile-details-content">
+          <div class="profile-meta-tags">
+            <span class="meta-tag"><i class="fa-solid fa-school"></i> Yayasan Bangun Nusa Bangsa</span>
+            <span class="meta-tag"><i class="fa-solid fa-map-pin"></i> Cibinong, Jawa Barat</span>
+            <span class="meta-tag"><i class="fa-solid fa-graduation-cap"></i> SMK Pusat Keunggulan</span>
+          </div>
+          <h3 class="profile-school-name">SMK Bangun Nusa Bangsa Cibinong</h3>
+          <p class="profile-school-text">
+            Berdiri dengan komitmen kokoh dalam mencerdaskan kehidupan bangsa, SMK Bangun Nusa Bangsa memadukan kurikulum nasional berbasis vokasi dengan standar industri modern. Kami membina para siswa dengan keterampilan teknis praktis, sertifikasi profesi resmi, serta kedisiplinan dan akhlak mulia.
+          </p>
+          <div class="profile-pills-row">
+            <div class="profile-pill-item">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <div>
+                <strong>Kurikulum Merdeka Vokasi</strong>
+                <span>Teaching Factory & Kelas Industri</span>
+              </div>
+            </div>
+            <div class="profile-pill-item">
+              <i class="fa-solid fa-id-card-clip"></i>
+              <div>
+                <strong>Sertifikasi Kompetensi BNSP</strong>
+                <span>LSP-P1 Terlisensi Resmi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-grid" style="margin-top: 2.5rem;">
+        <div class="about-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-icon-box bg-gradient-emerald">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3>Visi Kami</h3>
+          <p>Menjadi pusat pendidikan vokasi unggul dan rujukan nasional yang melahirkan lulusan berkarakter mulia, berkeahlian tinggi, adaptif terhadap teknologi digital, dan berdaya saing di tingkat global.</p>
+        </div>
+
+        <div class="about-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-icon-box bg-gradient-cyan">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3>Misi Utama</h3>
+          <ul class="misi-list">
+            <li><i class="fa-solid fa-circle-check"></i> Menyelenggarakan pembelajaran berbasis proyek (Project-Based Learning) & Teaching Factory.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Memperluas kerja sama strategis dengan industri untuk magang dan rekrutmen kerja langsung.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Membekali setiap siswa dengan multi-sertifikasi profesi resmi (BNSP & Vendor).</li>
+          </ul>
+        </div>
+
+        <div class="about-card glass-panel" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-icon-box bg-gradient-amber">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3>Budaya Kerja 5R</h3>
+          <p>Kami menanamkan budaya industri sejak hari pertama: <strong>Ringkas, Rapi, Resik, Rawat, dan Rajin</strong> serta pembiasaan *attitude* profesional agar siswa siap langsung beradaptasi di lingkungan korporat.</p>
+        </div>
+      </div>
+
+      <!-- Live Statistics Counter -->
+      <div class="stats-banner glass-panel" data-aos="fade-up" data-aos-delay="200">
+        <div class="stats-item">
+          <div class="stats-number"><span class="counter" data-target="92">0</span>%</div>
+          <div class="stats-label">Lulusan Bekerja & Wirausaha</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-item">
+          <div class="stats-number"><span class="counter" data-target="54">0</span>+</div>
+          <div class="stats-label">Mitra Industri & Perusahaan</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-item">
+          <div class="stats-number"><span class="counter" data-target="100">0</span>%</div>
+          <div class="stats-label">Guru Tersertifikasi Profesi</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-item">
+          <div class="stats-number"><span class="counter" data-target="45">0</span>+</div>
+          <div class="stats-label">Trofi Prestasi Juara LKS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Keahlian Section -->
+  <section class="section majors-section" id="jurusan">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-laptop-code"></i> PROGRAM KEAHLIAN UNGGULAN</span>
+        <h2 class="section-title">Kurikulum Mutakhir untuk <span class="gradient-text">Karier Masa Depan</span></h2>
+        <p class="section-desc">Pilihan program keahlian berstandar industri dengan sarana praktik terlengkap dan prospek karier yang sangat luas.</p>
+      </div>
+
+      <div class="majors-grid">
+        
+        <!-- Major 1: TKJ -->
+        <div class="major-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="major-img-box major-logo-box">
+            <img src="assets/images/logo_tkj.jpg" alt="Logo Teknik Komputer dan Jaringan SMK Bangun Nusa Bangsa" class="major-logo-img">
+            <div class="major-badge-tag tkj-tag">
+              <i class="fa-solid fa-network-wired"></i> IT & Cybersecurity
+            </div>
+          </div>
+          <div class="major-body">
+            <div class="major-code">PROGRAM KEAHLIAN 01</div>
+            <h3 class="major-title">Teknik Komputer & Jaringan (TKJ)</h3>
+            <p class="major-desc">
+              Kuasai infrastruktur jaringan skala enterprise, arsitektur cloud computing, administrasi server Linux/Windows, dan sistem pertahanan keamanan siber (cybersecurity).
+            </p>
+            
+            <div class="competency-box">
+              <h4><i class="fa-solid fa-layer-group"></i> Kompetensi Utama:</h4>
+              <div class="pills-wrap">
+                <span class="pill"><i class="fa-solid fa-check"></i> Network Routing & Switching</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Server & Cloud Administration</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Cybersecurity Fundamentals</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Fiber Optic Installation</span>
+              </div>
+            </div>
+
+            <div class="career-box">
+              <h4><i class="fa-solid fa-user-tie"></i> Prospek Karier:</h4>
+              <p>Network Engineer, Cloud Administrator, Cyber Security Specialist, IT Support Officer, ISP Technician.</p>
+            </div>
+
+            <button class="btn btn-outline-primary btn-block" onclick="openMajorDetail('tkj')">
+              <i class="fa-solid fa-circle-info"></i> Detail Kurikulum TKJ
+            </button>
+          </div>
+        </div>
+
+        <!-- Major 2: TKR -->
+        <div class="major-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="major-img-box major-logo-box">
+            <img src="assets/images/logo_tkr.jpg" alt="Logo Teknik Kendaraan Ringan Otomotif SMK Bangun Nusa Bangsa" class="major-logo-img">
+            <div class="major-badge-tag tkr-tag">
+              <i class="fa-solid fa-wrench"></i> Modern Automotive
+            </div>
+          </div>
+          <div class="major-body">
+            <div class="major-code">PROGRAM KEAHLIAN 02</div>
+            <h3 class="major-title">Teknik Kendaraan Ringan (TKR)</h3>
+            <p class="major-desc">
+              Pelajari pemeliharaan kendaraan modern, overhaul mesin bensin & diesel injeksi (EFI), kelistrikan bodi, AC kendaraan, serta diagnosis komputer ECU mobil modern.
+            </p>
+            
+            <div class="competency-box">
+              <h4><i class="fa-solid fa-layer-group"></i> Kompetensi Utama:</h4>
+              <div class="pills-wrap">
+                <span class="pill"><i class="fa-solid fa-check"></i> Electronic Fuel Injection (EFI)</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> ECU Computerized Scanning</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Powertrain & Chassis Tuning</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Auto Climate & Electrical System</span>
+              </div>
+            </div>
+
+            <div class="career-box">
+              <h4><i class="fa-solid fa-user-tie"></i> Prospek Karier:</h4>
+              <p>Automotive Diagnostic Technician, Service Advisor, Bengkel Resmi Specialist, Quality Control Otomotif, Wirausaha Bengkel.</p>
+            </div>
+
+            <button class="btn btn-outline-primary btn-block" onclick="openMajorDetail('tkr')">
+              <i class="fa-solid fa-circle-info"></i> Detail Kurikulum TKR
+            </button>
+          </div>
+        </div>
+
+        <!-- Major 3: AKL -->
+        <div class="major-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="major-img-box major-logo-box">
+            <img src="assets/images/logo_akl.jpg" alt="Logo Akuntansi dan Keuangan Lembaga SMK Bangun Nusa Bangsa" class="major-logo-img">
+            <div class="major-badge-tag akl-tag">
+              <i class="fa-solid fa-calculator"></i> Digital Accounting & Finance
+            </div>
+          </div>
+          <div class="major-body">
+            <div class="major-code">PROGRAM KEAHLIAN 03</div>
+            <h3 class="major-title">Akuntansi & Keuangan Lembaga</h3>
+            <p class="major-desc">
+              Kuasai pengelolaan keuangan digital, sistem perpajakan e-faktur, audit dasar, perbankan modern, dan pengoperasian perangkat lunak akuntansi standar industri terkemuka.
+            </p>
+            
+            <div class="competency-box">
+              <h4><i class="fa-solid fa-layer-group"></i> Kompetensi Utama:</h4>
+              <div class="pills-wrap">
+                <span class="pill"><i class="fa-solid fa-check"></i> Software Akuntansi (MYOB/Accurate)</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> E-Taxation & Perpajakan Digital</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Financial Statement Analysis</span>
+                <span class="pill"><i class="fa-solid fa-check"></i> Mini Bank & Cash Flow Operations</span>
+              </div>
+            </div>
+
+            <div class="career-box">
+              <h4><i class="fa-solid fa-user-tie"></i> Prospek Karier:</h4>
+              <p>Junior Financial Accountant, Tax Consultant Assistant, Bank Customer Service / Teller, Finance Administration Officer.</p>
+            </div>
+
+            <button class="btn btn-outline-primary btn-block" onclick="openMajorDetail('akl')">
+              <i class="fa-solid fa-circle-info"></i> Detail Kurikulum AKL
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasilitas & Mitra Industri Section -->
+  <section class="section facilities-section" id="fasilitas">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-industry"></i> SARANA & KEMITRAAN</span>
+        <h2 class="section-title">Fasilitas Berbasis Industri & <span class="gradient-text">Mitra Kerja Nyata</span></h2>
+        <p class="section-desc">Kami menghadirkan lingkungan belajar yang menyerupai dunia industri asli untuk mengasah keterampilan teknis secara maksimal.</p>
+      </div>
+
+      <!-- Facility Tabs Filter -->
+      <div class="facility-filter-tabs" data-aos="fade-up">
+        <button class="filter-tab-btn active" onclick="filterFacility('all', this)">Semua Fasilitas</button>
+        <button class="filter-tab-btn" onclick="filterFacility('lab', this)">Lab Komputer & Jaringan</button>
+        <button class="filter-tab-btn" onclick="filterFacility('bengkel', this)">Bengkel Otomotif</button>
+        <button class="filter-tab-btn" onclick="filterFacility('akuntansi', this)">Lab Bank & Akuntansi</button>
+        <button class="filter-tab-btn" onclick="filterFacility('umum', this)">Fasilitas Penunjang</button>
+      </div>
+
+      <!-- Facility Cards Grid -->
+      <div class="facility-grid" id="facilityGrid">
+        <div class="facility-item" data-cat="lab" data-aos="zoom-in" data-aos-delay="100">
+          <div class="fac-icon bg-emerald"><i class="fa-solid fa-server"></i></div>
+          <div class="fac-content">
+            <h4>Data Center & Server Lab TKJ</h4>
+            <p>Dilengkapi rak server enterprise, router Cisco & Mikrotik, workstation berspesifikasi tinggi, serta jalur fiber optic kecepatan gigabit.</p>
+          </div>
+        </div>
+
+        <div class="facility-item" data-cat="bengkel" data-aos="zoom-in" data-aos-delay="200">
+          <div class="fac-icon bg-cyan"><i class="fa-solid fa-car-side"></i></div>
+          <div class="fac-content">
+            <h4>Bengkel Otomotif Modern TKR</h4>
+            <p>Memiliki hydraulic two-post lift, computerized OBD-II scanner, unit mobil praktik injeksi (EFI), dan area spooring-balancing modern.</p>
+          </div>
+        </div>
+
+        <div class="facility-item" data-cat="akuntansi" data-aos="zoom-in" data-aos-delay="300">
+          <div class="fac-icon bg-amber"><i class="fa-solid fa-vault"></i></div>
+          <div class="fac-content">
+            <h4>Lab Simulasi Mini Bank & AKL</h4>
+            <p>Ruang simulasi perbankan dengan software akuntansi accurate & MYOB, mesin hitung uang, dan loket simulasi customer service perbankan.</p>
+          </div>
+        </div>
+
+        <div class="facility-item" data-cat="umum" data-aos="zoom-in" data-aos-delay="150">
+          <div class="fac-icon bg-emerald"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <div class="fac-content">
+            <h4>Smart Classrooms</h4>
+            <p>Ruang kelas ber-AC dengan proyektor interaktif smart screen, sound system terintegrasi, dan koneksi internet stabil untuk e-learning.</p>
+          </div>
+        </div>
+
+        <div class="facility-item" data-cat="umum" data-aos="zoom-in" data-aos-delay="250">
+          <div class="fac-icon bg-cyan"><i class="fa-solid fa-book-bookmark"></i></div>
+          <div class="fac-content">
+            <h4>Perpustakaan Digital (E-Library)</h4>
+            <p>Ribuan referensi buku kejuruan digital, jurnal ilmiah vokasi, dan ruang baca multimedia yang nyaman berstandar modern.</p>
+          </div>
+        </div>
+
+        <div class="facility-item" data-cat="umum" data-aos="zoom-in" data-aos-delay="350">
+          <div class="fac-icon bg-amber"><i class="fa-solid fa-basketball"></i></div>
+          <div class="fac-content">
+            <h4>Lapangan Olahraga & Aula Serbaguna</h4>
+            <p>Fasilitas futsal, basket, voli, dan gedung auditorium berkapasitas besar untuk pengembangan ekstrakurikuler serta ajang kreasi siswa.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industry Partners Section -->
+      <div class="partners-block" data-aos="fade-up">
+        <h3 class="partners-title"><i class="fa-solid fa-handshake"></i> Dipercaya & Bermitra Bersama Puluhan Industri Ternama</h3>
+        <p class="partners-subtitle">Siswa kami magang di perusahaan terkemuka dan diprioritaskan dalam program rekrutmen kerja langsung.</p>
+        
+        <div class="partners-marquee">
+          <div class="partner-pill"><i class="fa-solid fa-building"></i> Astra Group Network</div>
+          <div class="partner-pill"><i class="fa-solid fa-car"></i> Auto2000 & Toyota Service</div>
+          <div class="partner-pill"><i class="fa-solid fa-motorcycle"></i> Yamaha Motor Indonesia</div>
+          <div class="partner-pill"><i class="fa-solid fa-globe"></i> PT Telkom Indonesia</div>
+          <div class="partner-pill"><i class="fa-solid fa-network-wired"></i> Mikrotik Academy Partner</div>
+          <div class="partner-pill"><i class="fa-solid fa-laptop"></i> Axioo Class Program</div>
+          <div class="partner-pill"><i class="fa-solid fa-building-columns"></i> Bank BJB & Perbankan Swasta</div>
+          <div class="partner-pill"><i class="fa-solid fa-file-invoice-dollar"></i> Kantor Akuntan Publik (KAP) Rekanan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni & Prestasi Section -->
+  <section class="section testimonials-section" id="testimoni">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-trophy"></i> TESTIMONI & REKAM JEJAK</span>
+        <h2 class="section-title">Kisah Nyata Alumni & <span class="gradient-text">Prestasi Gemilang</span></h2>
+        <p class="section-desc">Melihat langsung bukti keberhasilan para lulusan dan deretan piala kejuaraan yang diraih siswa SMK Bangun Nusa Bangsa.</p>
+      </div>
+
+      <!-- Testimonial Cards -->
+      <div class="testimonials-grid">
+        
+        <!-- Alumni 1 -->
+        <div class="testi-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-header">
+            <div class="testi-avatar av-tkj"><i class="fa-solid fa-user-gear"></i></div>
+            <div class="testi-meta">
+              <h4>Rian Pratama, S.Tr.Kom</h4>
+              <span class="testi-job">Network Engineer di PT Telco Global Solution</span>
+              <span class="testi-tag badge-tkj">Alumni TKJ 2022</span>
+            </div>
+          </div>
+          <div class="testi-quote">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"Praktik langsung dengan perangkat server dan router asli di lab SMK Bangun Nusa Bangsa membuat saya percaya diri. Saat sertifikasi dan wawancara kerja, materi sekolah langsung selaras 100% dengan kebutuhan industri!"</p>
+          </div>
+          <div class="testi-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <!-- Alumni 2 -->
+        <div class="testi-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-header">
+            <div class="testi-avatar av-tkr"><i class="fa-solid fa-car-wrench"></i></div>
+            <div class="testi-meta">
+              <h4>Budi Santoso</h4>
+              <span class="testi-job">Senior Service Advisor di Bengkel Resmi Authorized</span>
+              <span class="testi-tag badge-tkr">Alumni TKR 2021</span>
+            </div>
+          </div>
+          <div class="testi-quote">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"Kedisiplinan dan budaya 5R yang dibiasakan sejak awal membuat saya cepat naik posisi di bengkel. Guru-guru di TKR sangat sabar membimbing penggunaan scanner diagnostik injeksi modern."</p>
+          </div>
+          <div class="testi-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <!-- Alumni 3 -->
+        <div class="testi-card glass-panel" data-aos="fade-up" data-aos-delay="300">
+          <div class="testi-header">
+            <div class="testi-avatar av-akl"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="testi-meta">
+              <h4>Siti Nurhaliza</h4>
+              <span class="testi-job">Junior Tax & Accounting Staff di BUMN Mitra</span>
+              <span class="testi-tag badge-akl">Alumni AKL 2023</span>
+            </div>
+          </div>
+          <div class="testi-quote">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"Software akuntansi dan simulasi perpajakan yang dipelajari di sekolah sama persis dengan yang saya gunakan di kantor sekarang. Lulus dari sini langsung punya bekal sertifikasi BNSP yang diakui!"</p>
+          </div>
+          <div class="testi-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Achievement List -->
+      <div class="achievements-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+        <div class="achieve-header">
+          <div class="achieve-title-box">
+            <i class="fa-solid fa-medal achieve-icon"></i>
+            <div>
+              <h3>Deretan Prestasi Unggulan Siswa</h3>
+              <p>Membuktikan keunggulan kompetensi di ajang bergengsi tingkat kota, provinsi, hingga nasional.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="achieve-grid">
+          <div class="achieve-item">
+            <div class="medali gold">🥇 Juara 1</div>
+            <div>
+              <h5>Lomba Kompetensi Siswa (LKS) IT Network Systems</h5>
+              <p>Tingkat Kota & Finalis Tingkat Provinsi Jawa Barat</p>
+            </div>
+          </div>
+
+          <div class="achieve-item">
+            <div class="medali silver">🥈 Juara 2</div>
+            <div>
+              <h5>Automotive Technology Skill Competition</h5>
+              <p>Diselenggarakan oleh Asosiasi Industri Otomotif Nasional</p>
+            </div>
+          </div>
+
+          <div class="achieve-item">
+            <div class="medali bronze">🥉 Juara 3</div>
+            <div>
+              <h5>Olimpiade Akuntansi Digital & Perpajakan</h5>
+              <p>Ajang Kompetisi Vokasi Keuangan Antar-SMK se-Jabodetabek</p>
+            </div>
+          </div>
+
+          <div class="achieve-item">
+            <div class="medali gold">🥇 Juara 1</div>
+            <div>
+              <h5>Inovasi Teknologi Tepat Guna Tingkat Pelajar</h5>
+              <p>Karya Inovasi Sistem Monitoring Bengkel Berbasis IoT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pendaftaran PPDB Section -->
+  <section class="section ppdb-section" id="ppdb">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-calendar-check"></i> PPDB TAHUN AJARAN 2026/2027</span>
+        <h2 class="section-title">Alur Pendaftaran <span class="gradient-text">Mudah & Transparan</span></h2>
+        <p class="section-desc">Hanya butuh 4 langkah mudah untuk bergabung menjadi bagian dari generasi vokasi juara di SMK Bangun Nusa Bangsa.</p>
+      </div>
+
+      <!-- PPDB Timeline Steps -->
+      <div class="ppdb-steps-grid" data-aos="fade-up">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+          <h4>Pendaftaran Online</h4>
+          <p>Isi formulir pendaftaran melalui website atau datang langsung ke ruang sekretariat panitia PPDB.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fa-solid fa-clipboard-user"></i></div>
+          <h4>Verifikasi & Tes Minat</h4>
+          <p>Verifikasi berkas persyaratan dan mengikuti tes pemetaan minat bakat serta wawancara singkat.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h4>Pengumuman Kelulusan</h4>
+          <p>Hasil seleksi diumumkan secara realtime melalui portal website resmi dan notifikasi WhatsApp.</p>
+        </div>
+
+        <div class="step-card highlight-step">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h4>Daftar Ulang & Orientasi</h4>
+          <p>Konfirmasi penerimaan, pengambilan seragam sekolah, dan persiapan Masa Pengenalan Lingkungan Sekolah (MPLS).</p>
+        </div>
+      </div>
+
+      <!-- CTA Banner inside PPDB -->
+      <div class="ppdb-cta-box glass-panel" data-aos="zoom-in">
+        <div class="ppdb-cta-content">
+          <h3>Kuota Setiap Jurusan Terbatas!</h3>
+          <p>Daftarkan diri Anda sekarang pada Gelombang 1 untuk mendapatkan beasiswa potongan biaya pendaftaran dan prioritas pemilihan jurusan impian.</p>
+        </div>
+        <div class="ppdb-cta-buttons">
+          <button class="btn btn-primary btn-lg btn-glow" onclick="openPpdbModal()">
+            <i class="fa-solid fa-file-signature"></i> Isi Formulir Sekarang
+          </button>
+          <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20dan%20biaya%20PPDB%20SMK%20Bangun%20Nusa%20Bangsa" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> Konsultasi PPDB
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Kontak & Lokasi Section -->
+  <section class="section contact-section" id="kontak">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-map-location-dot"></i> HUBUNGI KAMI</span>
+        <h2 class="section-title">Kunjungi Kampus Kami atau <span class="gradient-text">Kirim Pesan</span></h2>
+        <p class="section-desc">Tim kami selalu siap membantu memberikan informasi lengkap mengenai program keahlian, fasilitas, dan pendaftaran siswa baru.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-panel glass-panel" data-aos="fade-right">
+          <div class="form-header">
+            <h3><i class="fa-solid fa-envelope-open-text text-accent"></i> Formulir Pertanyaan Cepat</h3>
+            <p>Isi formulir berikut, tim konseling sekolah akan merespons pertanyaan Anda secepatnya.</p>
+          </div>
+          
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="cName"><i class="fa-regular fa-user"></i> Nama Lengkap Calon Siswa / Wali</label>
+              <input type="text" id="cName" class="form-control" placeholder="Contoh: Hendra Saputra" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-half">
+                <label for="cPhone"><i class="fa-brands fa-whatsapp"></i> Nomor WhatsApp Aktif</label>
+                <input type="tel" id="cPhone" class="form-control" placeholder="081234567890" required>
+              </div>
+              <div class="form-group col-half">
+                <label for="cMajor"><i class="fa-solid fa-graduation-cap"></i> Minat Jurusan</label>
+                <select id="cMajor" class="form-control" required>
+                  <option value="" disabled selected>Pilih Jurusan...</option>
+                  <option value="Teknik Komputer & Jaringan (TKJ)">Teknik Komputer & Jaringan (TKJ)</option>
+                  <option value="Teknik Kendaraan Ringan (TKR)">Teknik Kendaraan Ringan (TKR)</option>
+                  <option value="Akuntansi & Keuangan Lembaga (AKL)">Akuntansi & Keuangan Lembaga (AKL)</option>
+                  <option value="Belum Menentukan (Konsultasi)">Belum Menentukan (Konsultasi Dulu)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cMessage"><i class="fa-regular fa-comment-dots"></i> Pertanyaan atau Pesan</label>
+              <textarea id="cMessage" rows="4" class="form-control" placeholder="Tuliskan pertanyaan Anda mengenai biaya, fasilitas, atau jadwal pendaftaran..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-glow">
+              <i class="fa-solid fa-paper-plane"></i> Kirim Pesan via WhatsApp
+            </button>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+
+        <!-- Contact Info & Map Card -->
+        <div class="contact-info-panel" data-aos="fade-left">
+          <div class="info-card glass-panel">
+            <h3>Informasi Kontak Sekolah</h3>
+            
+            <div class="info-item">
+              <div class="info-icon bg-emerald"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-text">
+                <h5>Alamat Kampus:</h5>
+                <p>Jl. Raya Pendidikan No. 88, Kawasan Pendidikan Vokasi Terpadu, Jawa Barat, Indonesia</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon bg-cyan"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="info-text">
+                <h5>WhatsApp Customer Care:</h5>
+                <p><a href="https://wa.me/6281234567890" target="_blank" class="contact-link">+62 812-3456-7890</a> / +62 898-7654-3210</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon bg-amber"><i class="fa-regular fa-envelope"></i></div>
+              <div class="info-text">
+                <h5>Email Resmi:</h5>
+                <p><a href="mailto:info@smkbangunnusabangsa.sch.id" class="contact-link">info@smkbangunnusabangsa.sch.id</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon bg-emerald"><i class="fa-regular fa-clock"></i></div>
+              <div class="info-text">
+                <h5>Jam Operasional Pelayanan:</h5>
+                <p>Senin - Jumat: 07.30 - 16.00 WIB | Sabtu: 08.00 - 13.00 WIB</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Simulated Map Widget -->
+          <div class="map-card glass-panel">
+            <div class="map-header">
+              <span><i class="fa-solid fa-map-pin text-accent"></i> Peta Lokasi Kampus</span>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-ext-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Buka di Google Maps</a>
+            </div>
+            <div class="map-wrapper">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.215570077!2d106.789188!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e80f555555%3A0x1234567890abcdef!2sSMK%20Bangun%20Nusa%20Bangsa!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                width="100%" 
+                height="210" 
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Peta Lokasi SMK Bangun Nusa Bangsa">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col footer-brand-col">
+        <div class="footer-logo">
+          <img src="assets/images/logo_smk.jpg" alt="Logo SMK Bangun Nusa Bangsa" class="footer-logo-img">
+          <span>SMK BANGUN NUSA BANGSA</span>
+        </div>
+        <p class="footer-tagline">
+          Lembaga pendidikan vokasi unggulan yang berfokus pada penguasaan keahlian teknologi, kesiapan kerja nyata, dan pembentukan integritas generasi penerus bangsa.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Program Keahlian</h4>
+        <ul class="footer-links">
+          <li><a href="#jurusan"><i class="fa-solid fa-angle-right"></i> Teknik Komputer & Jaringan (TKJ)</a></li>
+          <li><a href="#jurusan"><i class="fa-solid fa-angle-right"></i> Teknik Kendaraan Ringan (TKR)</a></li>
+          <li><a href="#jurusan"><i class="fa-solid fa-angle-right"></i> Akuntansi & Keuangan Lembaga (AKL)</a></li>
+          <li><a href="#fasilitas"><i class="fa-solid fa-angle-right"></i> Kelas Industri & Sertifikasi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Akses Cepat</h4>
+        <ul class="footer-links">
+          <li><a href="#tentang"><i class="fa-solid fa-angle-right"></i> Profil & Visi Misi</a></li>
+          <li><a href="#fasilitas"><i class="fa-solid fa-angle-right"></i> Fasilitas Laboratorium</a></li>
+          <li><a href="#testimoni"><i class="fa-solid fa-angle-right"></i> Jejak Alumni & Prestasi</a></li>
+          <li><a href="#ppdb"><i class="fa-solid fa-angle-right"></i> Informasi Biaya & Alur PPDB</a></li>
+          <li><a href="#kontak"><i class="fa-solid fa-angle-right"></i> Lokasi & Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Layanan Siswa & Mitra</h4>
+        <p class="footer-text">Dapatkan update informasi terkini seputar beasiswa, agenda industri, dan kegiatan siswa.</p>
+        <div class="bkk-badge">
+          <i class="fa-solid fa-briefcase"></i>
+          <div>
+            <strong>Bursa Kerja Khusus (BKK)</strong>
+            <span>Pusat Penyaluran Kerja Lulusan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 <strong>SMK Bangun Nusa Bangsa</strong>. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Kebijakan Privasi</a>
+          <span>•</span>
+          <a href="#">Syarat & Ketentuan</a>
+          <span>•</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PPDB Quick Modal -->
+  <div class="modal-backdrop" id="ppdbModal">
+    <div class="modal-card glass-panel">
+      <button class="modal-close" onclick="closePpdbModal()">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon"><i class="fa-solid fa-user-plus"></i></div>
+        <div>
+          <h3>Formulir Registrasi Awal PPDB 2026/2027</h3>
+          <p>Daftarkan diri Anda hanya dalam 1 menit. Tim kami akan menghubungi untuk proses selanjutnya.</p>
+        </div>
+      </div>
+
+      <form id="ppdbForm" onsubmit="handlePpdbSubmit(event)">
+        <div class="form-group">
+          <label for="pName">Nama Lengkap Siswa</label>
+          <input type="text" id="pName" class="form-control" placeholder="Nama sesuai ijazah/akta kelahiran" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-half">
+            <label for="pPhone">No. WhatsApp Calon Siswa/Wali</label>
+            <input type="tel" id="pPhone" class="form-control" placeholder="08123456789" required>
+          </div>
+          <div class="form-group col-half">
+            <label for="pOrigin">Asal Sekolah (SMP/MTs)</label>
+            <input type="text" id="pOrigin" class="form-control" placeholder="Contoh: SMPN 1 Bangun Nusa" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pMajor">Pilihan Program Keahlian (Jurusan)</label>
+          <select id="pMajor" class="form-control" required>
+            <option value="" disabled selected>Pilih Program Keahlian Utama...</option>
+            <option value="Teknik Komputer & Jaringan (TKJ)">Teknik Komputer & Jaringan (TKJ)</option>
+            <option value="Teknik Kendaraan Ringan (TKR)">Teknik Kendaraan Ringan (TKR)</option>
+            <option value="Akuntansi & Keuangan Lembaga (AKL)">Akuntansi & Keuangan Lembaga (AKL)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pAddress">Alamat Domisili</label>
+          <input type="text" id="pAddress" class="form-control" placeholder="Kecamatan, Kota/Kabupaten" required>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" onclick="closePpdbModal()">Batal</button>
+          <button type="submit" class="btn btn-primary btn-glow">
+            <i class="fa-solid fa-check"></i> Submit Pendaftaran via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Major Detail Modal -->
+  <div class="modal-backdrop" id="majorModal">
+    <div class="modal-card glass-panel" id="majorModalContent">
+      <!-- Dynamic Content Filled by JS -->
+    </div>
+  </div>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions">
+    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20SMK%20Bangun%20Nusa%20Bangsa,%20saya%20ingin%20tanya%20informasi%20sekolah%20dan%20PPDB" target="_blank" rel="noopener" class="float-btn float-wa" title="Hubungi CS via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="wa-tooltip">Tanya CS Sekarang</span>
+    </a>
+    <button class="float-btn float-top" id="backToTop" onclick="scrollToTop()" title="Kembali ke Atas">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
