@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fathur | Cybersecurity & Network Security Portfolio</title>
+  <meta name="description" content="Portofolio Pribadi Fathur - Siswa SMK Bangun Nusa Bangsa, Spesialis Server Networking, Penetration Testing, Linux Sysadmin & Network Security.">
+  
+  <!-- Google Fonts: JetBrains Mono & Orbitron -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Interactive Digital Vector Dots & Constellation Canvas -->
+  <canvas id="digital-dots-canvas"></canvas>
+
+  <!-- Cyber HUD Live Defense Telemetry Widget -->
+  <div class="cyber-telemetry-hud" id="cyberTelemetryHud">
+    <div class="hud-telemetry-header">
+      <span class="status-pulse"></span>
+      <span class="hud-title">CYBER DEFENSE GRID</span>
+      <button class="hud-pulse-btn" id="hudEmpBtn" title="Trigger EMP Defense Pulse">
+        <i class="fas fa-satellite-dish"></i> EMP PING
+      </button>
+    </div>
+    <div class="hud-telemetry-stats">
+      <span>NODES: <strong id="hudNodeCount" class="accent-green">48</strong></span>
+      <span>FIREWALL: <strong class="accent-cyan">ACTIVE</strong></span>
+      <span>BLOCKED: <strong id="hudThreatCount" class="accent-green">0</strong></span>
+    </div>
+  </div>
+
+  <!-- CRT Monitor Scanlines -->
+  <div class="scanlines"></div>
+
+  <!-- ==========================================================================
+       CYBER NAVIGATION / HUD
+       ========================================================================== -->
+  <nav class="cyber-nav">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <span class="term-prefix">&gt;</span> FATHUR<span class="accent-green">::SEC</span>
+        <span class="badge-status">
+          <span class="status-pulse"></span> SYSTEM ONLINE
+        </span>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link"><span class="sym">[1]</span> $ cat about</a></li>
+        <li><a href="#skills" class="nav-link"><span class="sym">[2]</span> $ nmap skills</a></li>
+        <li><a href="#projects" class="nav-link"><span class="sym">[3]</span> $ ls projects</a></li>
+        <li><a href="#cli-terminal" class="nav-link"><span class="sym">[4]</span> $ sh terminal</a></li>
+        <li><a href="#contact" class="nav-link"><span class="sym">[5]</span> $ ping contact</a></li>
+      </ul>
+
+      <div class="nav-right-controls">
+        <button class="cyber-btn-sm" id="soundToggleBtn" title="Toggle Terminal Audio Feedback">
+          <i class="fas fa-volume-high" id="soundIcon"></i> <span>AUDIO: ON</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO / BANNER SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <div class="hero-text-col">
+          <div class="hero-prompt-bar">
+            <i class="fas fa-terminal"></i> root@fathur-sec:~# ./init_profile.sh --verbose
+          </div>
+
+          <h1 class="hero-title">
+            HALO, SAYA <span class="glitch-text" data-text="FATHUR">FATHUR</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            <span class="accent-cyan">[+]</span> CYBERSECURITY &amp; NETWORK SPECIALIST
+          </div>
+
+          <div class="hero-institution">
+            <i class="fas fa-school-flag"></i> SMK Bangun Nusa Bangsa
+          </div>
+
+          <p class="hero-bio-short">
+            Fokus mendalami arsitektur <strong>Server Networking (Cisco/MikroTik)</strong>, 
+            <strong>Penetration Testing (Ethical Hacking)</strong>, administrasi <strong>Linux Server</strong>, 
+            serta otomatisasi keamanan infrastruktur berbasis scripting.
+          </p>
+
+          <div class="hero-tags">
+            <span class="hero-tag"><i class="fas fa-shield-halved accent-green"></i> Penetration Testing</span>
+            <span class="hero-tag"><i class="fas fa-network-wired accent-cyan"></i> Cisco &amp; MikroTik</span>
+            <span class="hero-tag"><i class="fab fa-linux accent-amber"></i> Linux SysAdmin</span>
+            <span class="hero-tag"><i class="fas fa-lock accent-green"></i> Network Hardening</span>
+            <span class="hero-tag"><i class="fas fa-code accent-cyan"></i> Automation Scripting</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-cyber-primary">
+              <i class="fas fa-folder-open"></i> LIHAT PROYEK
+            </a>
+            <a href="#contact" class="btn-cyber-secondary">
+              <i class="fas fa-paper-plane"></i> INITIATE CONTACT
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual Column: Cyber Photo Frame & Terminal -->
+        <div class="hero-visual-col">
+          <!-- Cyber Photo Hologram Frame -->
+          <div class="cyber-profile-card">
+            <div class="cyber-photo-frame">
+              <span class="corner-bracket top-left"></span>
+              <span class="corner-bracket top-right"></span>
+              <span class="corner-bracket bottom-left"></span>
+              <span class="corner-bracket bottom-right"></span>
+              
+              <div class="photo-scan-bar"></div>
+              
+              <img src="fathur.jpg" alt="Fathur - Siswa SMK Bangun Nusa Bangsa" class="cyber-photo-img">
+              
+              <div class="photo-hud-badge top-badge">
+                <span class="hud-dot"></span> OPERATOR // FATHUR
+              </div>
+              <div class="photo-hud-badge bottom-badge">
+                <i class="fas fa-shield-halved"></i> SEC_AUTH: VERIFIED
+              </div>
+            </div>
+            
+            <div class="profile-meta-bar">
+              <div class="meta-item">
+                <span class="meta-label">ID:</span>
+                <span class="meta-val accent-green">FATHUR</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">INSTITUSI:</span>
+                <span class="meta-val accent-cyan">SMK BNB</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">TRACK:</span>
+                <span class="meta-val accent-amber">NET &amp; SEC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal Card Showcase -->
+          <div class="hero-terminal">
+            <div class="terminal-bar">
+              <div class="terminal-controls">
+                <span class="control-dot dot-close"></span>
+                <span class="control-dot dot-min"></span>
+                <span class="control-dot dot-max"></span>
+              </div>
+              <div class="terminal-title">
+                <i class="fas fa-shield-virus"></i> secops@fathur-box: /var/log/audit
+              </div>
+            </div>
+            <div class="terminal-body" id="heroTypingTerm">
+              <div class="code-line"><span class="prompt-prefix">fathur@secops:~$</span> whoami</div>
+              <div class="code-line dim">&gt; Fathur [Network Engineer &amp; Security Researcher]</div>
+              <div class="code-line"><span class="prompt-prefix">fathur@secops:~$</span> cat /etc/education</div>
+              <div class="code-line accent-cyan">&gt; SMK Bangun Nusa Bangsa (TKJ / Cybersecurity Track)</div>
+              <div class="code-line"><span class="prompt-prefix">fathur@secops:~$</span> uname -a</div>
+              <div class="code-line dim">&gt; Linux fathur-box 6.8.9-arch1-1 #1 SMP PREEMPT_DYNAMIC x86_64</div>
+              <div class="code-line"><span class="prompt-prefix">fathur@secops:~$</span> check_security_status</div>
+              <div class="code-line accent-green">&gt; [OK] Firewall active (iptables/nftables)</div>
+              <div class="code-line accent-green">&gt; [OK] IDS/IPS Snort listening on eth0</div>
+              <div class="code-line accent-green">&gt; [OK] Routing protocol: OSPF / BGP converged</div>
+              <div class="code-line"><span class="prompt-prefix">fathur@secops:~$</span> <span class="accent-green">ready_for_collaboration</span> <span class="cursor"></span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="metric-strip">
+        <div class="metric-box">
+          <div class="metric-val accent-green">100%</div>
+          <div class="metric-label">Dedikasi Cyber &amp; Network</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val accent-cyan">15+</div>
+          <div class="metric-label">Lab Network &amp; Security</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val accent-amber">RouterOS</div>
+          <div class="metric-label">MikroTik &amp; Cisco Certified Focus</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val accent-green">24/7</div>
+          <div class="metric-label">Linux Server Homelab Active</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT ME SECTION ($ cat about_me.txt)
+       ========================================================================== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cmd">
+          <span class="prompt">$</span> cat about_me.txt --detailed
+        </div>
+        <p class="section-desc">
+          Profil personal, latar belakang pendidikan di SMK Bangun Nusa Bangsa, dan visi pengembangan di dunia keamanan siber &amp; infrastruktur jaringan.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-tabs">
+          <div class="about-tab active" data-tab="tab-bio">
+            <i class="fas fa-file-lines"></i> bio.txt
+          </div>
+          <div class="about-tab" data-tab="tab-specs">
+            <i class="fas fa-server"></i> system_specs.json
+          </div>
+          <div class="about-tab" data-tab="tab-creds">
+            <i class="fas fa-award"></i> certifications_focus.log
+          </div>
+        </div>
+
+        <!-- Tab 1: Bio -->
+        <div class="tab-content active" id="tab-bio">
+          <div class="about-grid">
+            <div class="about-story">
+              <p>
+                <span class="accent-green">root@fathur:~$</span> Saya adalah seorang siswa di <strong>SMK Bangun Nusa Bangsa</strong> yang memiliki antusiasme mendalam terhadap arsitektur jaringan komputer dan keamanan sistem informasi.
+              </p>
+              <p>
+                Perjalanan saya dimulai dari merancang topologi jaringan lokal, mengonfigurasi perangkat router/switch (Cisco &amp; MikroTik), hingga mendalami dunia <strong>Offensive &amp; Defensive Security</strong>. Saya terbiasa melakukan simulasi penetration testing di lab terkontrol untuk mengidentifikasi kerentanan sebelum dieksploitasi oleh pihak yang tidak bertanggung jawab.
+              </p>
+              <p>
+                Dengan kemampuan administrasi <strong>Linux Server</strong> dan otomatisasi script (Bash/Python), saya fokus membangun infrastruktur yang tangguh, efisien, dan memiliki sistem pertahanan berlapis (defense-in-depth).
+              </p>
+            </div>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon"><i class="fas fa-network-wired"></i></div>
+                <div>
+                  <div class="highlight-title">Network Architecture &amp; Routing</div>
+                  <div class="highlight-desc">Konfigurasi VLAN, OSPF, BGP, NAT, Hotspot, VPN Tunneling (WireGuard/OpenVPN) pada Cisco IOS dan MikroTik RouterOS.</div>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon"><i class="fas fa-shield-virus"></i></div>
+                <div>
+                  <div class="highlight-title">Vulnerability Assessment &amp; PenTesting</div>
+                  <div class="highlight-desc">Reconnaissance, network mapping, scanning kerentanan web &amp; network, privilege escalation, dan analisis paket via Wireshark.</div>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon"><i class="fas fa-terminal"></i></div>
+                <div>
+                  <div class="highlight-title">Linux Sysadmin &amp; Hardening</div>
+                  <div class="highlight-desc">Manajemen server Debian/Ubuntu/Arch Linux, implementasi Firewall IPTables/UFW, fail2ban, SSH hardening, dan container Docker.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Specs -->
+        <div class="tab-content" id="tab-specs">
+          <div class="specs-grid">
+            <div class="spec-card">
+              <div class="spec-key">[PRIMARY_OS]</div>
+              <div class="spec-val">Arch Linux / Debian Server</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-key">[ROUTING_PLATFORMS]</div>
+              <div class="spec-val">MikroTik RouterOS &amp; Cisco IOS</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-key">[SECURITY_DISTRO]</div>
+              <div class="spec-val">Kali Linux / Parrot OS</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-key">[SCRIPTING_LANG]</div>
+              <div class="spec-val">Bash Shell, Python 3, PHP</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-key">[HOMELAB_ENVIRONMENT]</div>
+              <div class="spec-val">Proxmox VE / VirtualBox / GNS3 / EVE-NG</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-key">[STATUS_AVAILABILITY]</div>
+              <div class="spec-val accent-green">Open for Internship &amp; Security Audits</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Certifications & Focus -->
+        <div class="tab-content" id="tab-creds">
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+              <div>
+                <div class="highlight-title">MikroTik Certified Network Associate (MTCNA Curriculum)</div>
+                <div class="highlight-desc">Mendalami konsep dasar routing, bridging, wireless, firewall filter/NAT, bandwidth management (Queues), dan tunneling.</div>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+              <div>
+                <div class="highlight-title">Cisco Certified Network Associate (CCNA Preparation)</div>
+                <div class="highlight-desc">Penguasaan switching multi-layer, IPv4/IPv6 subnetting, inter-VLAN routing, OSPFv2/v3, ACL, dan network automation.</div>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-flag"></i></div>
+              <div>
+                <div class="highlight-title">Capture The Flag (CTF) &amp; TryHackMe Labs</div>
+                <div class="highlight-desc">Aktif berlatih di platform keamanan siber: TryHackMe &amp; Hack The Box untuk modul Network Pentesting dan Linux Privilege Escalation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SKILLS SECTION ($ nmap --script skills_scan)
+       ========================================================================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cmd">
+          <span class="prompt">$</span> nmap -sV --script skills_matrix 127.0.0.1
+        </div>
+        <p class="section-desc">
+          Hasil pemindaian kapabilitas teknis di bidang Server Networking, Ethical Hacking, Linux System Administration, dan Network Security.
+        </p>
+      </div>
+
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">ALL SKILLS</button>
+        <button class="filter-btn" data-filter="network">SERVER NETWORKING</button>
+        <button class="filter-btn" data-filter="pentest">PENTESTING &amp; SEC</button>
+        <button class="filter-btn" data-filter="sysadmin">LINUX &amp; SYSADMIN</button>
+        <button class="filter-btn" data-filter="automation">SCRIPTING &amp; TOOLS</button>
+      </div>
+
+      <div class="skills-grid" id="skillsGrid">
+        
+        <!-- Skill 1 -->
+        <div class="skill-card" data-category="network">
+          <div class="skill-header">
+            <div class="skill-title-wrap">
+              <div class="skill-icon-box"><i class="fas fa-router"></i></div>
+              <div>
+                <div class="skill-name">MikroTik RouterOS</div>
+                <div class="skill-port">PORT 8291/tcp (Winbox)</div>
+              </div>
+            </div>
+          </div>
+          <p class="skill-desc">
+            Manajemen bandwidth (Simple Queue &amp; Queue Tree), Firewall Mangle, NAT, Hotspot Gateway, PPPoE Server, VLAN Trunking &amp; VPN (IPsec, WireGuard).
+          </p>
+          <div class="skill-tags">
+            <span class="skill-pill">Queues</span>
+            <span class="skill-pill">VLAN</span>
+            <span class="skill-pill">WireGuard</span>
+            <span class="skill-pill">NAT/Mangle</span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" style="width: 90%;"></div>
+          </div>
+          <div class="skill-level-text">
+            <span>PROFICIENCY: ADVANCED</span>
+            <span>90%</span>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="skill-card type-cyan" data-category="network">
+          <div class="skill-header">
+            <div class="skill-title-wrap">
+              <div class="skill-icon-box"><i class="fas fa-network-wired"></i></div>
+              <div>
+                <div class="skill-name">Cisco Networking</div>
+                <div class="skill-port">PORT 23/tcp (Telnet/SSH)</div>
+              </div>
+            </div>
+          </div>
+          <p class="skill-desc">
+            Konfigurasi Cisco Catalyst Switches &amp; Routers, Inter-VLAN Routing (Router-on-a-stick), OSPF Routing, Access Control Lists (Standard/Extended ACL), Port Security.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-pill">Packet Tracer</span>
+            <span class="skill-pill">OSPF</span>
+            <span class="skill-pill">VTP/STP</span>
+            <span class="skill-pill">ACL</span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" style="width: 85%;"></div>
+          </div>
+          <div class="skill-level-text">
+            <span>PROFICIENCY: PROFICIENT</span>
+            <span>85%</span>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="skill-card" data-category="pentest">
+          <div class="skill-header">
+            <div class="skill-title-wrap">
+              <div class="skill-icon-box"><i class="fas fa-user-secret"></i></div>
+              <div>
+                <div class="skill-name">Penetration Testing</div>
+                <div class="skill-port">PORT 4444/tcp (Metasploit)</div>
+              </div>
+            </div>
+          </div>
+          <p class="skill-desc">
+            Vulnerability scanning, Network reconnaissance, Web application vulnerability testing (OWASP Top 10), Password cracking, privilege escalation dasar.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-pill">Nmap</span>
+            <span class="skill-pill">Burp Suite</span>
+            <span class="skill-pill">Metasploit</span>
+            <span class="skill-pill">Hydra</span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" style="width: 82%;"></div>
+          </div>
+          <div class="skill-level-text">
+            <span>PROFICIENCY: ETHICAL LABS</span>
+            <span>82%</span>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="skill-card type-cyan" data-category="sysadmin">
+          <div class="skill-header">
+            <div class="skill-title-wrap">
+              <div class="skill-icon-box"><i class="fab fa-linux"></i></div>
+              <div>
+                <div class="skill-name">Linux Administration</div>
+                <div class="skill-port">PORT 22/tcp (OpenSSH)</div>
+              </div>
+            </div>
+          </div>
+          <p class="skill-desc">
+            Deployment &amp; pemeliharaan server Linux (Debian/Ubuntu Server/Arch), SSH key authentication, systemd service management, LVM partitioning, CRON jobs.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-pill">Debian</span>
+            <span class="skill-pill">Systemd</span>
+            <span class="skill-pill">File Permissions</span>
+            <span class="skill-pill">Nginx/Apache</span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" style="width: 88%;"></div>
+          </div>
+          <div class="skill-level-text">
+            <span>PROFICIENCY: ADVANCED</span>
+            <span>88%</span>
+          </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="skill-card" data-category="pentest">
+          <div class="skill-header">
+            <div class="skill-title-wrap">
+              <div class="skill-icon-box"><i class="fas fa-water"></i></div>
+              <div>
+                <div class="skill-name">Wireshark &amp; Packet Analysis</div>
+                <div class="skill-port">PROMISCUOUS (pcap)</div>
+              </div>
+            </div>
+          </div>
+          <p class="skill-desc">
+            Deep Packet Inspection (DPI), capture lalu lintas jaringan (TCP/UDP, DNS, HTTP, ARP, ICMP), deteksi anomali paket, sniffing lalu lintas tak terenkripsi.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-pill">Wireshark</span>
+            <span class="skill-pill">Tcpdump</span>
+            <span class="skill-pill">DPI</span>
+            <span class="skill-pill">Protocol Filters</span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" style="width: 86%;"></div>
+          </div>
+          <div class="skill-level-text">
+            <span>PROFICIENCY: PROFICIENT</span>
+            <span>86%</span>
+          </div>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="skill-card type-cyan" data-category="automation">
+          <div class="skill-header">
+            <div class="skill-title-wrap">
+              <div class="skill-icon-box"><i class="fas fa-code"></i></div>
+              <div>
+                <div class="skill-name">Automation &amp; Scripting</div>
+                <div class="skill-port">BIN /usr/bin/env</div>
+              </div>
+            </div>
+          </div>
+          <p class="skill-desc">
+            Penulisan script Bash untuk otomatisasi backup server, log parsing, auto-firewall block, serta Python scripting untuk network recon &amp; socket programming.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-pill">Bash</span>
+            <span class="skill-pill">Python 3</span>
+            <span class="skill-pill">Socket</span>
+            <span class="skill-pill">Cron Automation</span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" style="width: 80%;"></div>
+          </div>
+          <div class="skill-level-text">
+            <span>PROFICIENCY: PROFICIENT</span>
+            <span>80%</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROJECTS SECTION ($ ls -l ./projects)
+       ========================================================================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cmd">
+          <span class="prompt">$</span> ls -la --color=auto ./projects/
+        </div>
+        <p class="section-desc">
+          Daftar proyek implementasi arsitektur jaringan, pengujian penetrasi keamanan siber, dan pengerasan sistem server.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-perm">drwxr-xr-x 4 fathur netops</span>
+            <span class="project-status status-completed">DEPLOYED</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <span class="sym">&gt;</span> Multi-VLAN Campus Network &amp; MikroTik Core
+            </div>
+            <p class="project-desc">
+              Perancangan dan implementasi topologi jaringan kampus terdistribusi menggunakan MikroTik Cloud Hosted Router (CHR) &amp; Cisco Switch.
+            </p>
+            <ul class="project-feature-list">
+              <li><i class="fas fa-check-circle"></i> Segmentasi 4 VLAN (Admin, Guru, Siswa, Tamu).</li>
+              <li><i class="fas fa-check-circle"></i> Dynamic Bandwidth Management dengan Queue Tree &amp; PCQ.</li>
+              <li><i class="fas fa-check-circle"></i> Hotspot Portal terintegrasi User Manager &amp; RADIUS.</li>
+            </ul>
+            <div class="project-stack">
+              <span class="stack-badge">MikroTik RouterOS</span>
+              <span class="stack-badge">Cisco IOS</span>
+              <span class="stack-badge">VLAN 802.1Q</span>
+              <span class="stack-badge">RADIUS</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn project-btn-primary" onclick="openProjectModal('campus-net')">
+                <i class="fas fa-eye"></i> DETAIL LOG
+              </button>
+              <a href="#contact" class="project-btn project-btn-secondary">
+                <i class="fas fa-envelope"></i> DISKUSI
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-perm">-rwxr-xr-x 1 fathur secops</span>
+            <span class="project-status status-active">ACTIVE RECON</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <span class="sym">&gt;</span> Automated Network Vulnerability Scanner
+            </div>
+            <p class="project-desc">
+              Perkakas CLI berbasis Python &amp; Bash untuk otomatisasi pemindaian port jaringan, identifikasi service version, dan pembuatan laporan audit HTML/PDF.
+            </p>
+            <ul class="project-feature-list">
+              <li><i class="fas fa-check-circle"></i> Integrasi modul Nmap NSE untuk deteksi CVE kritis.</li>
+              <li><i class="fas fa-check-circle"></i> Multi-threaded subnet scanning untuk kecepatan maksimal.</li>
+              <li><i class="fas fa-check-circle"></i> Format laporan terstruktur untuk tim administrator.</li>
+            </ul>
+            <div class="project-stack">
+              <span class="stack-badge">Python 3</span>
+              <span class="stack-badge">Bash Script</span>
+              <span class="stack-badge">Nmap API</span>
+              <span class="stack-badge">Audit Report</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn project-btn-primary" onclick="openProjectModal('vuln-scanner')">
+                <i class="fas fa-eye"></i> DETAIL LOG
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                <i class="fab fa-github"></i> REPO
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-perm">drwx------ 2 root root</span>
+            <span class="project-status status-completed">HARDENED</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <span class="sym">&gt;</span> Hardened Linux Bastion Server &amp; IDS
+            </div>
+            <p class="project-desc">
+              Penggelaran server gateway Debian Linux dengan pengerasan keamanan tinggi, pencegahan brute-force SSH, dan deteksi intrusi real-time.
+            </p>
+            <ul class="project-feature-list">
+              <li><i class="fas fa-check-circle"></i> Konfigurasi IPTables Firewall zero-trust default DROP.</li>
+              <li><i class="fas fa-check-circle"></i> Integrasi Fail2ban &amp; Snort IDS untuk deteksi port scan.</li>
+              <li><i class="fas fa-check-circle"></i> WireGuard VPN Gateway dengan enkripsi modern ChaCha20.</li>
+            </ul>
+            <div class="project-stack">
+              <span class="stack-badge">Debian Server</span>
+              <span class="stack-badge">IPTables</span>
+              <span class="stack-badge">Fail2ban</span>
+              <span class="stack-badge">WireGuard</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn project-btn-primary" onclick="openProjectModal('bastion-server')">
+                <i class="fas fa-eye"></i> DETAIL LOG
+              </button>
+              <a href="#contact" class="project-btn project-btn-secondary">
+                <i class="fas fa-envelope"></i> AUDIT REQUEST
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-perm">-rw-r--r-- 1 fathur student</span>
+            <span class="project-status status-completed">LAB REPORT</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <span class="sym">&gt;</span> Penetration Testing Lab &amp; CTF Writeups
+            </div>
+            <p class="project-desc">
+              Dokumentasi pengujian keamanan siber pada mesin lab virtual (Active Directory simulasi &amp; Linux Vulnerable Boxes).
+            </p>
+            <ul class="project-feature-list">
+              <li><i class="fas fa-check-circle"></i> Analisis kerentanan SQL Injection &amp; Broken Auth.</li>
+              <li><i class="fas fa-check-circle"></i> SUID Binary exploitation &amp; sudo misconfiguration privesc.</li>
+              <li><i class="fas fa-check-circle"></i> Remediasi dan rekomendasi patch pengamanan sistem.</li>
+            </ul>
+            <div class="project-stack">
+              <span class="stack-badge">Kali Linux</span>
+              <span class="stack-badge">Burp Suite</span>
+              <span class="stack-badge">Hydra</span>
+              <span class="stack-badge">OWASP Top 10</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn project-btn-primary" onclick="openProjectModal('ctf-writeups')">
+                <i class="fas fa-eye"></i> DETAIL LOG
+              </button>
+              <a href="#contact" class="project-btn project-btn-secondary">
+                <i class="fas fa-shield"></i> CTF TEAM
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE TERMINAL CLI
+       ========================================================================== -->
+  <section id="cli-terminal">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cmd">
+          <span class="prompt">$</span> /bin/bash --interactive-shell
+        </div>
+        <p class="section-desc">
+          Ketik perintah terminal di bawah untuk menjelajahi portofolio ini secara interaktif layaknya shell Linux sesungguhnya.
+        </p>
+      </div>
+
+      <div class="interactive-cli-card">
+        <div class="cli-header">
+          <div class="terminal-controls">
+            <span class="control-dot dot-close"></span>
+            <span class="control-dot dot-min"></span>
+            <span class="control-dot dot-max"></span>
+          </div>
+          <div class="terminal-title">
+            <i class="fas fa-terminal"></i> guest@fathur-sec-node: ~ (bash 5.2.26)
+          </div>
+        </div>
+
+        <div class="cli-screen" id="cliScreen">
+          <div class="cli-output">
+            <span class="accent-green">Selamat datang di Fathur Interactive Terminal Shell!</span><br>
+            Ketik <span class="accent-cyan">help</span> untuk daftar perintah yang tersedia, atau klik tombol cepat di bawah.
+          </div>
+        </div>
+
+        <div class="cli-quick-cmds">
+          <span class="dim" style="font-size:0.75rem; margin-right:4px;">Quick Commands:</span>
+          <span class="cmd-chip" onclick="executeCLICommand('help')">help</span>
+          <span class="cmd-chip" onclick="executeCLICommand('cat about')">cat about</span>
+          <span class="cmd-chip" onclick="executeCLICommand('nmap skills')">nmap skills</span>
+          <span class="cmd-chip" onclick="executeCLICommand('ls projects')">ls projects</span>
+          <span class="cmd-chip" onclick="executeCLICommand('whoami')">whoami</span>
+          <span class="cmd-chip" onclick="executeCLICommand('status')">status</span>
+          <span class="cmd-chip" onclick="executeCLICommand('clear')">clear</span>
+        </div>
+
+        <form class="cli-input-form" id="cliForm" onsubmit="handleCLISubmit(event)">
+          <span class="cli-prompt-label">guest@fathur-sec:~$</span>
+          <input type="text" class="cli-input" id="cliInputField" placeholder="ketik perintah di sini (misal: help)..." autocomplete="off" spellcheck="false">
+          <button type="submit" class="cyber-btn-sm" style="border-color:var(--neon-green); color:var(--neon-green);">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION ($ ping contact)
+       ========================================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cmd">
+          <span class="prompt">$</span> ping -c 4 contact.fathur.local
+        </div>
+        <p class="section-desc">
+          Terbuka untuk kesempatan magang, proyek konfigurasi jaringan, audit keamanan siber, dan kolaborasi tim riset.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left: Ping Telemetry & Direct Channels -->
+        <div class="contact-info-card">
+          <div>
+            <div class="ping-box">
+              <div class="code-line accent-green">PING contact.fathur.local (192.168.100.1) 56(84) bytes of data.</div>
+              <div class="code-line dim">64 bytes from fathur.sec: icmp_seq=1 ttl=64 time=0.038 ms</div>
+              <div class="code-line dim">64 bytes from fathur.sec: icmp_seq=2 ttl=64 time=0.042 ms</div>
+              <div class="code-line dim">64 bytes from fathur.sec: icmp_seq=3 ttl=64 time=0.035 ms</div>
+              <div class="code-line accent-cyan">--- contact.fathur.local ping statistics ---</div>
+              <div class="code-line dim">3 packets transmitted, 3 received, 0% packet loss, time 2004ms</div>
+              <div class="code-line accent-green">[STATUS]: READY FOR INTERACTION</div>
+            </div>
+
+            <div class="contact-channel-list">
+              <a href="mailto:fathur@example.com" class="contact-channel">
+                <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                <div class="channel-content">
+                  <div class="channel-label">EMAIL ADDRESS</div>
+                  <div class="channel-value">fathur.cybersec@gmail.com</div>
+                </div>
+              </a>
+
+              <a href="https://github.com" target="_blank" rel="noopener" class="contact-channel">
+                <div class="channel-icon"><i class="fab fa-github"></i></div>
+                <div class="channel-content">
+                  <div class="channel-label">GITHUB REPOSITORY</div>
+                  <div class="channel-value">github.com/fathur-sec</div>
+                </div>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-channel">
+                <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="channel-content">
+                  <div class="channel-label">PROFESSIONAL LINKEDIN</div>
+                  <div class="channel-value">linkedin.com/in/fathur-network</div>
+                </div>
+              </a>
+
+              <div class="contact-channel">
+                <div class="channel-icon"><i class="fas fa-location-dot"></i></div>
+                <div class="channel-content">
+                  <div class="channel-label">INSTITUSI / LOKASI</div>
+                  <div class="channel-value">SMK Bangun Nusa Bangsa, Indonesia</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem;" class="dim">
+            <span class="accent-green"><i class="fas fa-lock"></i> PGP Fingerprint:</span><br>
+            <code>4A9F 8B2C 1D0E 7F6A 5B4C 3E2D 1A0B 9C8D 7E6F 5A4B</code>
+          </div>
+        </div>
+
+        <!-- Right: Dispatch Secure Message Form -->
+        <div class="contact-form-card">
+          <div class="form-title">
+            <i class="fas fa-paper-plane"></i> TRANSMIT SECURE MESSAGE
+          </div>
+
+          <form id="contactForm" onsubmit="handleMessageSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="senderName"><span class="accent-cyan">[SENDER_IDENTITY]</span> NAMA ANDA</label>
+              <input type="text" id="senderName" class="form-input" placeholder="Masukkan nama / alias" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderEmail"><span class="accent-cyan">[RETURN_ADDR]</span> EMAIL KONTAK</label>
+              <input type="email" id="senderEmail" class="form-input" placeholder="email@domain.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subjectMatter"><span class="accent-cyan">[PACKET_TOPIC]</span> SUBJEK PESAN</label>
+              <input type="text" id="subjectMatter" class="form-input" placeholder="Misal: Penawaran Magang / Diskusi Keamanan Jaringan" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="messagePayload"><span class="accent-cyan">[PAYLOAD_CONTENT]</span> ISI PESAN</label>
+              <textarea id="messagePayload" class="form-textarea" placeholder="Tuliskan pesan atau rincian proyek Anda..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send-packet" id="submitPacketBtn">
+              <i class="fas fa-tower-broadcast"></i> SEND ENCRYPTED PACKET
+            </button>
+            <div id="formFeedback" style="margin-top: 12px; font-size: 0.85rem; display: none;"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CYBER FOOTER
+       ========================================================================== -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-title">FATHUR<span class="accent-green">::PORTFOLIO</span></div>
+          <p>
+            Portofolio resmi Fathur, siswa SMK Bangun Nusa Bangsa. Berfokus pada Server Networking, Penetration Testing, dan Linux System Administration.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-links-title">NAVIGASI SHELL</div>
+          <ul class="footer-links">
+            <li><a href="#about">$ cat about_me.txt</a></li>
+            <li><a href="#skills">$ nmap skills_matrix</a></li>
+            <li><a href="#projects">$ ls -l ./projects</a></li>
+            <li><a href="#cli-terminal">$ interactive_shell</a></li>
+            <li><a href="#contact">$ ping contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-links-title">KEAMANAN &amp; SPESIALISASI</div>
+          <ul class="footer-links">
+            <li><span class="dim">&gt; MikroTik RouterOS &amp; Cisco IOS</span></li>
+            <li><span class="dim">&gt; Offensive &amp; Defensive Security</span></li>
+            <li><span class="dim">&gt; Linux Server Hardening</span></li>
+            <li><span class="dim">&gt; Bash &amp; Python Automation</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Fathur &bull; SMK Bangun Nusa Bangsa &bull; All Rights Reserved.
+        </div>
+        <div>
+          <span class="accent-green">ENCRYPTION: AES-256-GCM</span> | <span class="accent-cyan">TERMINAL NODE #01</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PROJECT DETAIL MODAL
+       ========================================================================== -->
+  <div class="cyber-modal-backdrop" id="projectModalBackdrop" onclick="closeProjectModal(event)">
+    <div class="cyber-modal" onclick="event.stopPropagation()">
+      <div class="modal-bar">
+        <div class="terminal-title" id="modalTitle">
+          <i class="fas fa-terminal"></i> PROJECT_DETAILS.LOG
+        </div>
+        <button class="modal-close-btn" onclick="closeProjectModalDirect()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript Engine -->
+  <script src="script.js"></script>
+</body>
+</html>
