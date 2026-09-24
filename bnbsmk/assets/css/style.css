@@ -1,0 +1,662 @@
+/* ===================================================
+   SMK BANGUN NUSA BANGSA - MODERN 3D STYLING SYSTEM
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #1e40af;         /* Royal Navy */
+  --primary-glow: rgba(37, 99, 235, 0.45);
+  --primary-light: #3b82f6;
+  --secondary: #06b6d4;       /* Neon Cyan */
+  --secondary-glow: rgba(6, 182, 212, 0.4);
+  --accent: #f59e0b;          /* Vibrant Amber */
+  --dark: #090e1a;            /* Deep Space Dark */
+  --dark-surface: #0f172a;    /* Slate Dark */
+  --dark-card: rgba(15, 23, 42, 0.85);
+  --light: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+  --glass-dark-bg: rgba(15, 23, 42, 0.75);
+  --glass-dark-border: rgba(255, 255, 255, 0.1);
+  --glass-dark-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #334155;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* 3D Container & Perspective */
+.perspective-container {
+  perspective: 1000px;
+}
+
+/* ===================================================
+   NAVBAR (GLASSMORPHISM & 3D HEADER)
+   =================================================== */
+.navbar-bnb {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 14px 0;
+  transition: var(--transition);
+}
+
+.navbar-bnb.scrolled {
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.navbar-bnb .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--dark);
+}
+
+.brand-badge-3d {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #fff;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 8px 18px var(--primary-glow);
+  transform: rotate(-5deg);
+  transition: var(--transition);
+}
+
+.navbar-brand:hover .brand-badge-3d {
+  transform: rotate(0deg) scale(1.08);
+}
+
+.navbar-bnb .nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  padding: 8px 16px !important;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar-bnb .nav-link:hover,
+.navbar-bnb .nav-link.active {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+/* ===================================================
+   HERO SECTION WITH 3D INTERACTIVE THREE.JS CANVAS
+   =================================================== */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 10% 20%, #0d1527 0%, #060b14 100%);
+  color: #ffffff;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+
+#threejs-hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.badge-glow {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 20px var(--secondary-glow);
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); }
+  50% { box-shadow: 0 0 28px rgba(6, 182, 212, 0.6); }
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-top: 18px;
+  margin-bottom: 22px;
+  background: linear-gradient(135deg, #ffffff 30%, #93c5fd 70%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 580px;
+  margin-bottom: 35px;
+  line-height: 1.8;
+}
+
+/* 3D Floating Action Card in Hero */
+.hero-floating-card-3d {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-floating-card-3d:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-8px);
+}
+
+.hero-stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.hero-stat-box:hover {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: rgba(37, 99, 235, 0.5);
+  transform: translateY(-4px);
+}
+
+/* ===================================================
+   BUTTONS (3D DEPTH & GRADIENTS)
+   =================================================== */
+.btn-bnb-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px var(--primary-glow), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.btn-bnb-primary:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px var(--primary-glow);
+}
+
+.btn-bnb-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-bnb-outline {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-bnb-outline:hover {
+  background: #ffffff;
+  color: var(--dark);
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================================
+   3D CARDS (TILT EFFECT & PARALLAX)
+   =================================================== */
+.card-3d-tilt {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-3d-tilt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-3d-tilt:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 25px 50px -15px rgba(37, 99, 235, 0.15);
+  transform: translateY(-8px);
+}
+
+.card-3d-tilt:hover::before {
+  opacity: 1;
+}
+
+.icon-box-3d {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.15) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--primary);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.08);
+  transform: translateZ(20px);
+  transition: var(--transition);
+}
+
+.card-3d-tilt:hover .icon-box-3d {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #ffffff;
+  transform: translateZ(30px) scale(1.05) rotate(4deg);
+  box-shadow: 0 12px 25px var(--primary-glow);
+}
+
+/* ===================================================
+   ARTICLE CARDS (3D GLASS & HOVER EFFECTS)
+   =================================================== */
+.article-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.article-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px -12px rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.article-thumbnail-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.article-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.article-card:hover .article-thumbnail {
+  transform: scale(1.08);
+}
+
+.article-category-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.84rem;
+  color: var(--gray-400);
+  margin-bottom: 12px;
+}
+
+.article-meta i {
+  color: var(--primary-light);
+}
+
+.article-title {
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+.article-title a {
+  color: inherit;
+}
+
+.article-title a:hover {
+  color: var(--primary);
+}
+
+.article-excerpt {
+  color: var(--gray-600);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* ===================================================
+   KOMENTAR SECTION & FORM
+   =================================================== */
+.comments-section {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  padding: 36px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.comment-card {
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: var(--transition);
+}
+
+.comment-card.is-anonymous {
+  border-left: 4px solid var(--secondary);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, rgba(241, 245, 249, 1) 100%);
+}
+
+.comment-card.is-author {
+  border-left: 4px solid var(--primary);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(241, 245, 249, 1) 100%);
+}
+
+.comment-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.avatar-anon {
+  background: linear-gradient(135deg, #64748b, #334155);
+}
+
+.avatar-user {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.avatar-admin {
+  background: linear-gradient(135deg, #e11d48, #be123c);
+}
+
+/* 3D Comment Form */
+.comment-form-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.anonymous-toggle-card {
+  background: rgba(6, 182, 212, 0.07);
+  border: 1px dashed rgba(6, 182, 212, 0.4);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+/* ===================================================
+   SECTION HEADERS
+   =================================================== */
+.section-tag {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  color: var(--gray-600);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+/* ===================================================
+   FOOTER (DARK 3D THEME)
+   =================================================== */
+.footer-bnb {
+  background: var(--dark);
+  color: #94a3b8;
+  padding: 80px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-bnb h5 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-bnb h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+  transform: translateX(6px);
+}
+
+.social-btn-3d {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-btn-3d:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 20px var(--primary-glow);
+}
+
+/* ===================================================
+   RESPONSIVE QUERIES
+   =================================================== */
+@media (max-width: 991.98px) {
+  .hero-title {
+    font-size: 2.6rem;
+  }
+  .hero-section {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+  .hero-floating-card-3d {
+    transform: none;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .comments-section {
+    padding: 20px;
+  }
+}
